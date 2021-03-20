@@ -1,0 +1,120 @@
+\documentclass[12pt,oneside]{book}
+
+% PACCHETTI
+\usepackage{tabto}              % strumento per inserire tab nel testo
+\usepackage[                    % geometria della pagina
+    a4paper,
+    inner=2cm,
+    outer=3cm,
+    top=3cm,
+    bottom=3cm,
+    bindingoffset=1.2cm
+]{geometry}
+\usepackage[utf8]{inputenc}     % 3 pacchetti per l'italiano
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}           % custom chapter titles
+
+\usepackage{fancyhdr}
+
+
+% INFORMAZIONI SUL DOCUMENTO
+\title{\Large{\textbf{Fisica 1}}}
+\author{Enrico Bragastini}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\LARGE}
+
+
+% CONTENUTO
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\nouppercase\leftmark}
+\cfoot{\thepage}
+\frontmatter
+
+% Prima pagina - Titolo
+\maketitle
+\tableofcontents
+
+\mainmatter
+\chapter{Nozioni di base}
+\section{Misura di una grandezza}
+La misura di una grandezza può avvenire mediante un dispositivo misurabile
+oppure in confronto con un'altra grandezza fisica omogenea di riferimento costante.
+
+L'espressione di una grandezza fisica avviene nella forma: Numero + \underline{Unità di Misura}
+
+\section{Grandezze fisiche fondamentali e derivate}
+\subsection{Grandezze fisiche fondamentali}
+Le grandezze fisiche fondamentali sono:
+\begin{itemize}
+    \item Lunghezza                 \tabto{8cm} [L]
+    \item Massa                     \tabto{8cm}  [M]
+    \item Tempo                     \tabto{8cm}  [t]
+    \item Intensità Di Corrente     \tabto{8cm}  [i]
+    \item Temperatura Assoluta      \tabto{8cm}  [T]
+\end{itemize}
+
+\subsection{Grandezze fisiche derivate}
+Le grandezze fisiche derivate sono:
+\begin{itemize}
+    \item Superficie
+    \item Volume
+    \item Velocità
+    \item Accelerazione
+    \item Forza
+    \item Pressione
+    \item ...
+\end{itemize}
+
+\section{Sistemi di Unità di Misura}
+\begin{center}
+    \bgroup
+    \def\arraystretch{1.5}
+    \begin{tabular}{ |c| c c c c c|}
+        \hline
+        SISTEMA     & Lunghezza & Massa & Tempo & Corrente & Temperatura \\
+        \hline
+        MKS (s. i.) & m         & kg    & s     & A        & °K          \\
+        \hline
+        cgs         & cm        & g     & s     & A        & °K          \\
+        \hline
+    \end{tabular}
+    \egroup
+\end{center}
+
+\subsection{Ulteriori Unità di Misura}
+Esistono ulteriori sistemi di unità di misura che permettono di avere maggiore comodità
+nelle misurazioni di particolari grandezze.
+Se ne elencano alcuni:
+
+\begin{enumerate}
+    \item Lunghezza:    \tabto{3cm} Ångströms, Anno-Luce
+    \item Tempo:        \tabto{3cm} Minuto, Ora
+    \item Volume:       \tabto{3cm} Litro
+    \item Velocità:     \tabto{3cm} Chilometro/Ora
+    \item Pressione:    \tabto{3cm} Atmosfera, Millimetro di mercurio
+    \item Energia:      \tabto{3cm} Elettrovolt, Chilovattora
+\end{enumerate}
+
+\section{Notazione Scientifica}
+Per i numeri particolarmente grandi o piccoli risulta comodo rappresentarli
+in \textbf{Notazione Scientifica} utilizzando le potenze del 10.
+
+(Da integrare)
+
+\section{Analisi Dimensionale}
+L'analisi dimensionale è utile per controllare che una formula sia giusta o per dedurre come deve
+essere una certa formula.
+Le dimensioni possono essere trattate come quantità algebriche. Due membri della stessa equazione devono avere le
+stesse dimensioni.
+
+(Da integrare)
+
+\section{Coordinate Cartesiane}
+\section{Coordinate polari}
+
+\section{Grandezze fisiche scalari e vettoriali}
+
+
+\end{document}
