@@ -1,6 +1,7 @@
 \documentclass[12pt,oneside]{book}
 
 % PACCHETTI
+\usepackage{hyperref}           % hyperlinks
 \usepackage{tabto}              % strumento per inserire tab nel testo
 \usepackage[                    % geometria della pagina
     a4paper,
@@ -16,7 +17,7 @@
 \usepackage{titlesec}           % custom chapter titles
 
 \usepackage{fancyhdr}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
 \usepackage{xcolor}
 \usepackage{amssymb}
 
@@ -41,9 +42,9 @@
 \tableofcontents
 
 \mainmatter
-\chapter{Matrici e sistemi lineari}
+\chapter{Matrici}
 
-\section{Matrici}
+\section{Introduzione alle Matrici}
 Una \textbf{Matrice} è una tabella numerica a doppia entrata con i coefficienti ordinati per righe
 e per colonne
 
@@ -57,20 +58,20 @@ Per esempio, date le seguenti due matrici:
         1 & 2 & 3 \\
         4 & 5 & 6 \\
     \end{bmatrix}
-    \; B =
+    \; \; \; B =
     \begin{bmatrix}
         1 & 2 & 3 \\
         4 & 5 & 6 \\
     \end{bmatrix}
 \end{equation*}
-La matrice A è $2 \times 3$ equation* ha 2 righe e 3 colonne. \newline La matrice B è $2 \times 2$ perché ha 2 righe
-e 2 colonne
+- La matrice A è $2 \times 3$ perché ha 2 righe e 3 colonne. \newline
+- La matrice B è $2 \times 2$ perché ha 2 righe e 2 colonne
 
 \subsection{Vettore riga e Vettore colonna}
 Esistono due particolari tipologie di matrici distinte dalla loro \emph{forma}:
 \begin{itemize}
-    \item \textbf{Vettore Riga} \newline
-          Si tratta di una matrice composta da \emph{una sola riga}. Un vettore riga è quindi una matrice
+    \item \textbf{Vettore riga} \newline
+          Si tratta di una matrice composta da \emph{una sola riga}. Un \emph{vettore riga} è quindi una matrice
           di forma $1 \times n$.
           \begin{equation*}
               A =
@@ -78,8 +79,8 @@ Esistono due particolari tipologie di matrici distinte dalla loro \emph{forma}:
                   1 & 2 & 3 \\
               \end{bmatrix}
           \end{equation*}
-    \item \textbf{Vettore Colonna} \newline
-          Si tratta di una matrice composta da \emph{una sola colonna}. Un vettore colonna è quindi una matrice
+    \item \textbf{Vettore colonna} \newline
+          Si tratta di una matrice composta da \emph{una sola colonna}. Un \emph{vettore colonna} è quindi una matrice
           di forma $m \times 1$.
           \begin{equation*}
               A =
@@ -95,15 +96,34 @@ Una Matrice si dice \textbf{quadrata} quando il numero delle righe è uguale al 
 $m = n$. In tale caso, $n$ è chiamato \textbf{ordine} della matrice.
 
 ~\newline
-Esempio
+\underline{Esempio:}
+\begin{equation*}
+    \text{La matrice }A =
+    \begin{bmatrix}
+        1 & 2 \\
+        3 & 4 \\
+    \end{bmatrix}
+    \text{è \emph{quadrata} di \emph{ordine} pari a 2.}
+\end{equation*}
+
+\subsection{Diagonali di una matrice quadrata}
+Una \emph{matrice quadrata} presenta due \textbf{diagonali}:
+\begin{itemize}
+    \item \textbf{Diagonale principale}, costituita dagli elementi che attraversano centralmente la matrice,
+          a partire dall'angolo superiore sinistro a quello inferiore destro
+    \item \textbf{Diagonale secondaria}, costituita dagli elementi che attraversano centralmente la matrice,
+          a partire dall'angolo inferiore sinistro a quello superiore destro
+\end{itemize}
+~\newline
+\underline{Esempio:}
 \begin{equation*}
     A =
     \begin{bmatrix}
-        \color{red} 1  & \color{blue}2 \\
-        \color{blue} 3 & \color{red} 4 \\
+        \color{red}1  & \color{blue}2 \\
+        \color{blue}3 & \color{red}4  \\
     \end{bmatrix}
 \end{equation*}
-La matrice A è \emph{quadrata} di \emph{ordine} pari a 2. Gli elementi della matrice in \textcolor{red}{rosso}
+Gli elementi della matrice in \textcolor{red}{rosso}
 fanno parte della \textbf{diagonale principale}. Gli elementi della matrice in \textcolor{blue}{blu} fanno
 parte della \textbf{diagonale secondaria}
 
@@ -122,9 +142,9 @@ Esempio:
 \end{equation*}
 Nella matrice A:
 \begin{itemize}
-    \item 1 è l'elemento di posto (1, 1)
-    \item 2 è l'elemento di posto (1, 2)
-    \item 6 è l'elemento di posto (2, 3)
+    \item \emph{1} è l'elemento di posto (1, 1)
+    \item \emph{2} è l'elemento di posto (1, 2)
+    \item \emph{6} è l'elemento di posto (2, 3)
 \end{itemize}
 
 \subsection{Notazione generica}
@@ -140,20 +160,18 @@ Una matrice A di forma $m \times n$, ovvero una matrice del tipo:
 \end{equation*}
 può essere indicata mediante la sua \textbf{notazione generica}:
 
-\begin{align*}
-    A & =[a_{ij}] & 1 & \le i \le m \\
-      &           & 1 & \le j \le n
-\end{align*}
+\begin{equation*}
+    A = [a_{i,j}] \;\;\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}
+\end{equation*}
 
-\newpage
 \subsection{Matrici uguali}
 Due matrici si dicono \textbf{uguali} se hanno:
 \begin{enumerate}
-    \item Stessa forma: stesso numero di righe e stesso numero di colonne
-    \item Stessi coefficienti
+    \item \textbf{Stessa forma}: \emph{\underline{stesso numero di righe}} e \emph{\underline{stesso numero di colonne}}
+    \item \textbf{Stessi coefficienti}
 \end{enumerate}
 ~\newline
-\underline{Esempio:}
+\underline{Esempio 1:}
 \begin{equation*}
     \begin{bmatrix}
         1 & 2 & 3 \\
@@ -169,7 +187,7 @@ Due matrici si dicono \textbf{uguali} se hanno:
 Le due matrici sono diverse perché la prima è $2\times 3$ mentre la seconda è $3\times 2$.
 
 ~\newline
-\underline{Esempio:}
+\underline{Esempio 2:}
 \begin{equation*}
     A=
     \begin{bmatrix}
@@ -185,9 +203,74 @@ Le due matrici sono diverse perché la prima è $2\times 3$ mentre la seconda è
 \end{equation*}
 Le due matrici sono diverse perché $A_{2,2} \neq B_{2,2}$.
 
+\section{Matrici particolari}
+\subsection{Matrice nulla}
+La \textbf{matrice nulla} è una matrice $m \times n$ del tipo
+\begin{equation*}
+    O_{mn} = [0] \;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}
+\end{equation*}
+tale che
+\begin{equation*}
+    A + O_{mn} = A
+\end{equation*}
 
-\subsection{Operazioni}
-\subsubsection{Somma tra matrici}
+\subsection{Matrice opposta}
+La \textbf{matrice opposta} di una matrice $A = [a_{i,j}] \;\;$ \tiny$ \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$ \normalsize  \newline
+si denota con $-A$ ed è la matrice con la stessa forma di $A$ (ovvero $m \times n$) tale che
+\begin{equation*}
+    A + (-A) = O_{mn}
+\end{equation*}
+
+\subsection{Matrice identità}
+La \textbf{Matrice identità} è una matrice $I$ tale che $AI = A$, dove A è una matrice $n \times m$.
+Definiamo quindi la \emph{matrice identità} come la matrice quadrata $n \times n$ composta da tutti 1 sulla diagonale principale
+e 0 altrove.
+\begin{equation*}
+    I_n =
+    \begin{bmatrix}
+        1      & 0      & \cdots & 0      \\
+        0      & 1      & \cdots & 0      \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0      & 0      & \cdots & 1
+    \end{bmatrix}
+\end{equation*}
+
+\paragraph{Delta di Kronecker}
+In matematica per \emph{delta di Kronecker} si intende una funzione di due variabili discrete
+che vale 1 se i loro valori coincidono, mentre vale 0 in caso contrario.
+\begin{equation*}
+    \delta_{ij} =
+    \begin{cases}
+        1 \;\;\; i=j \\
+        0 \;\;\; i \neq j
+    \end{cases}
+\end{equation*}
+Di conseguenza è possibile definire la \textbf{matrice identità} sfruttando questa funzione:
+\begin{equation*}
+    I_n = [\delta_{i,j}] \;\;\; \scriptstyle \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}
+\end{equation*}
+
+~\newline
+\underline{Esempio:}
+\begin{equation*}
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6
+    \end{bmatrix}
+\end{equation*}
+
+
+\section{Operazioni con le matrici}
+\subsection{Somma tra matrici}
 Se $A$ e $B$ sono due matrici $m \times n$, allora si può definire la loro somma, che viene
 denotata con $A+B$.
 \begin{equation*}
@@ -226,7 +309,7 @@ La somma di due matrici (con la stessa \emph{forma}) si fa \textbf{posto per pos
     \end{bmatrix}
 \end{equation*}
 
-\subsubsection{Moltiplicazione per uno scalare}
+\subsection{Moltiplicazione per uno scalare}
 Sia $\alpha \in \mathbb{R}$ uno scalare.
 Consideriamo $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$
 allora $\alpha A$ denota la matrice con la stessa forma di $A$ (ovvero $m \times n$) e con
@@ -235,18 +318,18 @@ termine generico $b_{i,j} = \alpha a_{i,j}$
 ~\newline
 \underline{Esempio:}
 \begin{align*}
-    \alpha & = 2 & A &= \begin{bmatrix}
+    \alpha   & = 2                                          & A & = \begin{bmatrix}
         1 & 2 \\
         3 & 4
     \end{bmatrix} \;\; 2 \times 2 \\
-    & &    
-    \alpha A &= \begin{bmatrix}
+             &                                              &
+    \alpha A & = \begin{bmatrix}
         2 & 4 \\
         6 & 8
-    \end{bmatrix} \;\; 2 \times 2 
+    \end{bmatrix} \;\; 2 \times 2
 \end{align*}
 
-Data $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$, allora ci sono 3 casi particolari:
+\noindent Data $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$, allora ci sono 3 casi particolari:
 \begin{itemize}
     \item $0 \cdot A = O_{m,n}$ (\emph{matrice nulla})
     \item $1 \cdot A = A$
