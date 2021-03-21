@@ -11,4 +11,4 @@
 \contentsline {section}{\numberline {1.5}Analisi Dimensionale}{2}%
 \contentsline {section}{\numberline {1.6}Coordinate Cartesiane}{2}%
 \contentsline {section}{\numberline {1.7}Coordinate polari}{2}%
-\contentsline {section}{\numberline {1.8}Grandezze fisiche scalari e vettoriali}{2}%
+\contentsline {section}{\numberline {1.8}Grandezze scalari e grandezze vettoriali}{2}%

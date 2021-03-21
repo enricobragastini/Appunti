@@ -1,0 +1,142 @@
+\documentclass[12pt,oneside,draft]{book}
+
+% PACCHETTI
+\usepackage{tabto}              % strumento per inserire tab nel testo
+\usepackage[                    % geometria della pagina
+    a4paper,
+    inner=1.8cm,
+    outer=1.8cm,
+    top=3cm,
+    bottom=3cm,
+    bindingoffset=1.2cm
+]{geometry}
+\usepackage[utf8]{inputenc}     % 3 pacchetti per l'italiano
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}           % custom chapter titles
+
+\usepackage{fancyhdr}
+
+% GRAFICI
+\usepackage{tikz}
+\usepackage{amsmath}
+\tikzset{
+  pics/linegraph/.style = {
+    code = {
+       \def\mymax{-1000}
+       \def\mymin{1000}
+       \foreach \y in {#1} { % determine min and max values
+         \pgfmathparse{max(\y,\mymax)}\xdef\mymax{\pgfmathresult}
+         \pgfmathparse{min(\y,\mymin)}\xdef\mymin{\pgfmathresult}
+       }
+       \foreach \y [count=\c] in {#1} {
+           % use \pgfmathparse to determine the appropriate label
+           \pgfmathparse{\y==\mymax}
+           \ifnum\pgfmathresult=1\def\mylabel{\text{max}}
+           \else
+             \pgfmathparse{\y==\mymin}
+             \ifnum\pgfmathresult=1\def\mylabel{\text{min}}
+             \else\def\mylabel{\c}
+             \fi
+           \fi
+           % draw the line
+           \draw [->,densely dashed](\c,0)--++(90:\y) node[above]{$x_{\mylabel}$};
+       }
+    }
+  }
+}
+
+
+% INFORMAZIONI SUL DOCUMENTO
+\title{\Large{\textbf{Probabilità e Statistica}}}
+\author{Enrico Bragastini}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\LARGE}
+
+
+% CONTENUTO
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\nouppercase\leftmark}
+\cfoot{\thepage}
+\frontmatter
+
+% Prima pagina - Titolo
+\maketitle
+\tableofcontents
+
+\mainmatter
+
+% STATISTICA DESCRITTIVA
+\chapter{Statistica Descrittiva}
+La \textbf{statistica descrittiva} è la branca della statistica che studia i criteri di rilevazione,
+classificazione, sintesi e rappresentazione dei dati appresi dallo studio di una popolazione o di
+una parte di essa (detta \textit{campione}).
+
+I risultati ottenuti nell'ambito della statistica descrittiva si possono definire \emph{certi}, a meno di errori
+di misurazione dovuti al caso, che sono in media pari a zero. Da questo punto di vista si differenzia dalla \emph{statistica inferenziale}, alla quale sono associati inoltre errori di valutazione.
+
+\section{Descrizione degli insiemi di dati}
+\subsection{Frequenza statistica}
+In statistica esistono 2 tipologie di frequenze:
+\begin{enumerate}
+    \item \textbf{Frequenza Assoluta}: è il numero di volte che si verifica un evento a prescindere dal numero totale delle prove.
+    \item \textbf{Frequenza Relativa}: è il rapporto tra la frequenza assoluta e il numero di prove eseguite; viene misurata con un numero decimale compreso tra 0 e 1, o in percentuale.
+          Considerando un insieme di \emph{n} dati, se \emph{f} rappresenta la frequenza assoluta di un dato, $f/n$ indica la sua \emph{Frequenza Relativa}.
+\end{enumerate}
+
+\subsection{Tabella di Frequenza}
+Un set di dati relativamente piccolo può essere rappresentato in una \textbf{tabella di frequenza}.
+
+~\newline
+\underline{Esempio:} \newline
+\noindent Vengono raccolti nella \emph{tabella di frequenza} i valori degli stipendi annuali di
+ingegneri neolaureati
+
+\begin{center}
+    \bgroup
+    \def\arraystretch{1.5}
+    \begin{tabular}{ |c| c c c c c c c c c c c|}
+        \hline
+        SALARIO ANNUALE ($*10^3$) & 47 & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 56 & 57 & 60 \\
+        \hline
+        FREQUENZA                 & 4  & 1  & 3  & 5  & 8  & 10 & 0  & 5  & 2  & 3  & 1  \\
+        \hline
+    \end{tabular}
+    \egroup
+\end{center}
+
+\subsection{Classi di Appartenenza (bins)}
+Quando il numero di valori distinti è troppo grande, si suddividono questi valori in un certo
+numero di \textbf{classi di appartenenza}, o di \emph{intervalli}.
+
+È indispensabile trovare un corretto \textbf{equilibrio}, scegliendo la quantità corretta di \emph{classi di appartenenza}:
+
+- Scegliere \emph{poche classi} comporta una \emph{alta perdita di informazioni}.
+
+- Scegliere \emph{troppe classi} comporta la costruzione di un \emph{istogramma frastagliato e poco informativo}.
+
+
+\subsection{Grafici}
+\subsubsection{Line Graph (grafico a bastoncini)}
+Permette di visualizzare i dati con degli \emph{stem}
+
+\begin{tikzpicture}
+    % Draw the axes
+    \draw [<->] (0,4)node[right]{$y$}|-(8,0)node[right]{$x$};
+
+    % draw the line graph
+    \pic{linegraph={}};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass[12pt,oneside]{book}
+
+% PACCHETTI
+\usepackage{tabto}              % strumento per inserire tab nel testo
+\usepackage[                    % geometria della pagina
+    a4paper,
+    inner=2cm,
+    outer=3cm,
+    top=3cm,
+    bottom=3cm,
+    bindingoffset=1.2cm
+]{geometry}
+\usepackage[utf8]{inputenc}     % 3 pacchetti per l'italiano
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}           % custom chapter titles
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+
+% INFORMAZIONI SUL DOCUMENTO
+\title{\Large{\textbf{Algebra Lineare}}}
+\author{Enrico Bragastini}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\LARGE}
+
+
+% CONTENUTO
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\nouppercase\leftmark}
+\cfoot{\thepage}
+\frontmatter
+
+% Prima pagina - Titolo
+\maketitle
+\tableofcontents
+
+\mainmatter
+\chapter{Matrici e sistemi lineari}
+
+\section{Matrici}
+Una \textbf{Matrice} è una tabella numerica a doppia entrata con i coefficienti ordinati per righe
+e per colonne
+
+\subsection{Dimensioni di una matrice (forma)}
+Si dice che una matrice è $m \times n$ se ha \emph{m righe} e \emph{n colonne}.
+~\newline
+Per esempio, date le seguenti due matrici:
+\begin{equation*}
+    A =
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+    \end{bmatrix}
+    \; B =
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+    \end{bmatrix}
+\end{equation*}
+La matrice A è $2 \times 3$ perchè ha 2 righe e 3 colonne. \newline La matrice B è $2 \times 2$ perché ha 2 righe
+e 2 colonne
+
+\subsection{Vettore riga e Vettore colonna}
+Esistono due particolari tipologie di matrici distinte dalla loro \emph{forma}:
+\begin{itemize}
+    \item \textbf{Vettore Riga} \newline
+          Si tratta di una matrice composta da \emph{una sola riga}. Un vettore riga è quindi una matrice
+          di forma $1 \times n$.
+          \begin{equation*}
+              A =
+              \begin{bmatrix}
+                  1 & 2 & 3 \\
+              \end{bmatrix}
+          \end{equation*}
+    \item \textbf{Vettore Colonna} \newline
+          Si tratta di una matrice composta da \emph{una sola colonna}. Un vettore colonna è quindi una matrice
+          di forma $m \times 1$.
+          \begin{equation*}
+              A =
+              \begin{bmatrix}
+                  1 \\ 2 \\ 3 \\
+              \end{bmatrix}
+          \end{equation*}
+\end{itemize}
+
+\newpage
+\subsection{Matrice quadrata}
+Una Matrice si dice \textbf{quadrata} quando il numero delle righe è uguale al numero delle colonne, ovvero quando
+$m = n$. In tale caso, $n$ è chiamato \textbf{ordine} della matrice.
+
+~\newline
+Esempio
+\begin{equation*}
+    A =
+    \begin{bmatrix}
+        \color{red} 1  & \color{blue}2 \\
+        \color{blue} 3 & \color{red} 4 \\
+    \end{bmatrix}
+\end{equation*}
+La matrice A è \emph{quadrata} di \emph{ordine} pari a 2. Gli elementi della matrice in \textcolor{red}{rosso}
+fanno parte della \textbf{diagonale principale}. Gli elementi della matrice in \textcolor{blue}{blu} fanno
+parte della \textbf{diagonale secondaria}
+
+\subsection{Posto in una matrice}
+Ogni elemento di una matrice è univocamente determinato dal posto che occupa nella tabella.
+L'unico elemento di posto $(i,j)$ è l'elemento che si trova nella \emph{i-esima riga} e nella
+\emph{j-esima colonna}. \newline
+~\newline
+Esempio:
+\begin{equation*}
+    A =
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+    \end{bmatrix}
+\end{equation*}
+Nella matrice A:
+\begin{itemize}
+    \item 1 è l'elemento di posto (1, 1)
+    \item 2 è l'elemento di posto (1, 2)
+    \item 6 è l'elemento di posto (2, 3)
+\end{itemize}
+
+\subsection{Notazione generica}
+Una matrice A di forma $m \times n$, ovvero una matrice del tipo:
+\begin{equation*}
+    A =
+    \begin{bmatrix}
+        a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+        a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+        \vdots  & \vdots  & \ddots & \vdots  \\
+        a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+    \end{bmatrix}
+\end{equation*}
+può essere indicata mediante la sua \textbf{notazione generica}:
+\begin{equation*}
+    A = [a_ij] \;
+    \begin{align}
+        1 \le i \le m & 1 \le j \le n
+    \end{align}
+\end{equation*}
+
+
+\end{document}
