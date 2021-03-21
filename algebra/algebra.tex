@@ -18,6 +18,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage{amssymb}
 
 
 % INFORMAZIONI SUL DOCUMENTO
@@ -62,7 +63,7 @@ Per esempio, date le seguenti due matrici:
         4 & 5 & 6 \\
     \end{bmatrix}
 \end{equation*}
-La matrice A è $2 \times 3$ perchè ha 2 righe e 3 colonne. \newline La matrice B è $2 \times 2$ perché ha 2 righe
+La matrice A è $2 \times 3$ equation* ha 2 righe e 3 colonne. \newline La matrice B è $2 \times 2$ perché ha 2 righe
 e 2 colonne
 
 \subsection{Vettore riga e Vettore colonna}
@@ -138,12 +139,119 @@ Una matrice A di forma $m \times n$, ovvero una matrice del tipo:
     \end{bmatrix}
 \end{equation*}
 può essere indicata mediante la sua \textbf{notazione generica}:
+
+\begin{align*}
+    A & =[a_{ij}] & 1 & \le i \le m \\
+      &           & 1 & \le j \le n
+\end{align*}
+
+\newpage
+\subsection{Matrici uguali}
+Due matrici si dicono \textbf{uguali} se hanno:
+\begin{enumerate}
+    \item Stessa forma: stesso numero di righe e stesso numero di colonne
+    \item Stessi coefficienti
+\end{enumerate}
+~\newline
+\underline{Esempio:}
 \begin{equation*}
-    A = [a_ij] \;
-    \begin{align}
-        1 \le i \le m & 1 \le j \le n
-    \end{align}
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6
+    \end{bmatrix}
+    \neq
+    \begin{bmatrix}
+        1 & 2 \\
+        3 & 4 \\
+        5 & 6
+    \end{bmatrix}
 \end{equation*}
+Le due matrici sono diverse perché la prima è $2\times 3$ mentre la seconda è $3\times 2$.
+
+~\newline
+\underline{Esempio:}
+\begin{equation*}
+    A=
+    \begin{bmatrix}
+        1 & 2 \\
+        4 & 5
+    \end{bmatrix}
+    \neq
+    \begin{bmatrix}
+        1 & 2 \\
+        3 & 0 \\
+    \end{bmatrix}
+    =B
+\end{equation*}
+Le due matrici sono diverse perché $A_{2,2} \neq B_{2,2}$.
+
+
+\subsection{Operazioni}
+\subsubsection{Somma tra matrici}
+Se $A$ e $B$ sono due matrici $m \times n$, allora si può definire la loro somma, che viene
+denotata con $A+B$.
+\begin{equation*}
+    \begin{split}
+        A & = [a_{i,j}] \;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned} \\
+        \\
+        B & = [b_{i,j}] \;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}
+    \end{split}
+    \begin{split}
+        A+B & = [c_{i,j}] \;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned} \;\; \text{dove} \;\;
+        c_{i,j} = a_{i,j} + b_{i,j}
+    \end{split}
+\end{equation*}
+
+La somma di due matrici (con la stessa \emph{forma}) si fa \textbf{posto per posto}.
+
+~\newline
+\underline{Esempio:}
+\begin{equation*}
+    A=
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6
+    \end{bmatrix} \;
+    B=
+    \begin{bmatrix}
+        1 & 0 & 3 \\
+        2 & 1 & 0
+    \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \\ A+B=
+    \begin{bmatrix}
+        2 & 2 & 6 \\
+        6 & 6 & 6
+    \end{bmatrix}
+\end{equation*}
+
+\subsubsection{Moltiplicazione per uno scalare}
+Sia $\alpha \in \mathbb{R}$ uno scalare.
+Consideriamo $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$
+allora $\alpha A$ denota la matrice con la stessa forma di $A$ (ovvero $m \times n$) e con
+termine generico $b_{i,j} = \alpha a_{i,j}$
+
+~\newline
+\underline{Esempio:}
+\begin{align*}
+    \alpha & = 2 & A &= \begin{bmatrix}
+        1 & 2 \\
+        3 & 4
+    \end{bmatrix} \;\; 2 \times 2 \\
+    & &    
+    \alpha A &= \begin{bmatrix}
+        2 & 4 \\
+        6 & 8
+    \end{bmatrix} \;\; 2 \times 2 
+\end{align*}
+
+Data $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$, allora ci sono 3 casi particolari:
+\begin{itemize}
+    \item $0 \cdot A = O_{m,n}$ (\emph{matrice nulla})
+    \item $1 \cdot A = A$
+    \item $(-1) \cdot A = -A$ (\emph{matrice inversa})
+\end{itemize}
 
 
 \end{document}
