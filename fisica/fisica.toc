@@ -1,23 +1,43 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {chapter}{\numberline {1}Nozioni di base}{1}%
-\contentsline {section}{\numberline {1.1}Misura di una grandezza}{1}%
-\contentsline {section}{\numberline {1.2}Grandezze fisiche fondamentali e derivate}{1}%
-\contentsline {subsection}{\numberline {1.2.1}Grandezze fisiche fondamentali}{1}%
-\contentsline {subsection}{\numberline {1.2.2}Grandezze fisiche derivate}{1}%
-\contentsline {section}{\numberline {1.3}Sistemi di Unità di Misura}{2}%
-\contentsline {subsection}{\numberline {1.3.1}Ulteriori Unità di Misura}{2}%
-\contentsline {section}{\numberline {1.4}Notazione Scientifica}{2}%
-\contentsline {section}{\numberline {1.5}Analisi Dimensionale}{2}%
-\contentsline {section}{\numberline {1.6}Sistemi di Coordinate}{3}%
-\contentsline {subsection}{\numberline {1.6.1}Coordinate cartesiane}{3}%
-\contentsline {subsection}{\numberline {1.6.2}Coordinate scalari}{3}%
-\contentsline {section}{\numberline {1.7}Grandezze scalari e grandezze vettoriali}{3}%
-\contentsline {subsection}{\numberline {1.7.1}Grandezza scalare}{3}%
-\contentsline {subsection}{\numberline {1.7.2}Grandezza vettoriale}{3}%
-\contentsline {subsubsection}{Vettori uguali}{3}%
-\contentsline {section}{\numberline {1.8}Operazioni tra vettori}{3}%
-\contentsline {subsection}{\numberline {1.8.1}Somma (metodo grafico)}{3}%
-\contentsline {subsection}{\numberline {1.8.2}Opposto di un vettore}{4}%
-\contentsline {subsection}{\numberline {1.8.3}Sottrazione tra vettori}{4}%
-\contentsline {subsection}{\numberline {1.8.4}Prodotto tra un vettore e uno scalare}{4}%
+\contentsline {chapter}{\numberline {1}Nozioni di base}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Misura di una grandezza}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Grandezze fisiche fondamentali e derivate}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Sistemi di Unità di Misura}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Ulteriori Unità di Misura}{2}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Notazione Scientifica}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Analisi Dimensionale}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Sistemi di Coordinate}{3}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Coordinate cartesiane}{3}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Coordinate scalari}{3}{subsection.1.6.2}%
+\contentsline {paragraph}{Conversione delle coordinate}{4}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Grandezze scalari e grandezze vettoriali}{4}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Grandezza scalare}{4}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Grandezza vettoriale}{4}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8}Proprietà e operazioni con i vettori}{5}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Uguaglianza di due vettori}{5}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Somma tra vettori (metodo grafico)}{5}{subsection.1.8.2}%
+\contentsline {paragraph}{Metodo punta-coda:}{5}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Opposto di un vettore}{6}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Sottrazione tra vettori}{6}{subsection.1.8.4}%
+\contentsline {subsection}{\numberline {1.8.5}Prodotto tra un vettore e uno scalare}{6}{subsection.1.8.5}%
+\contentsline {section}{\numberline {1.9}Componenti di un vettore e vettori unitari}{7}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Componenti di un vettore}{7}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Vettori unitari}{7}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Somma tra vettori (metodo con vettori unitari)}{8}{subsection.1.9.3}%
+\contentsline {chapter}{\numberline {2}Cinematica}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Moto in una dimensione}{9}{section.2.1}%
+\contentsline {paragraph}{Punto materiale}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Posizione, spostamento e distanza}{9}{section.2.2}%
+\contentsline {paragraph}{Posizione}{9}{section.2.2}%
+\contentsline {paragraph}{Spostamento}{9}{section.2.2}%
+\contentsline {paragraph}{Distanza percorsa}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Velocità media e istantanea}{10}{section.2.3}%
+\contentsline {paragraph}{Velocità media}{10}{section.2.3}%
+\contentsline {paragraph}{Velocità media scalare}{10}{section.2.3}%
+\contentsline {paragraph}{Velocità istantanea}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Moto Rettilineo Uniforme}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Accelerazione media e istantanea}{11}{section.2.5}%
+\contentsline {paragraph}{Accelerazione media}{11}{section.2.5}%
+\contentsline {paragraph}{Accelerazione instantanea}{11}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Moto rettilineo uniformemente accelerato}{11}{section.2.6}%
