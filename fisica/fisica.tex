@@ -25,6 +25,7 @@
 \usepackage{graphicx}           % IMMAGINI
 \graphicspath{ {./images/} }
 
+\usepackage{csquotes}
 
 % INFORMAZIONI SUL DOCUMENTO
 \title{\Large{\textbf{Fisica 1}}}
@@ -555,10 +556,124 @@ Essendo l'\textbf{accelerazione costante}, anche $a_x$ e $a_y$ sono costanti.
               & = \vec{r}_i + \vec{v}_i t + \frac{1}{2} \vec{a} t^2
 \end{align*}
 
+\subsection{Moto dei proiettili}
+Il moto dei proiettili (moto parabolico) può essere analizzato mediante due ipotesi:
+\begin{enumerate}
+    \item l’accelerazione di caduta libera si mantiene costante per tutto il moto ed è diretta verso il basso
+    \item l’effetto della resistenza dell’aria è trascurabile
+\end{enumerate}
+Sotto queste ipotesi, la traiettoria del proiettile è \emph{sempre una parabola}.
 
+\begin{figure*}[h]
+    \centering
+    \includegraphics[scale=0.5]{moto_proiettili}
+\end{figure*}
 
+Il moto del proiettile è considerabile con accelerazione orizzontale $a_x = 0$,
+mentre l'accelerazione verticale è costante: $\vec{a} = \vec{g}$. L'espressione del vettore posizione del proiettile è quindi pari a:
+\begin{equation*}
+    \vec{r}_f = \vec{r}_i + \vec{v}_i t + \frac{1}{2} \vec{g}t^2
+\end{equation*}
+dove le due componenti di $\vec{v}_i$ sono:
+\begin{align*}
+    v_{xi} & = v_i \cos{\theta_i} & v_{yi} & = v_i \sin{\theta_i}
+\end{align*}
 
+Tenendo a mente che il moto del proiettile è la sovrapposizione di un punto materiale con velocità orizzontale costante
+\begin{equation*}
+    x_f = x_i + v_{xi}t
+\end{equation*}
+e un punto materiale
+con accelerazione verticale costante ($a_y = -g$), otteniamo le seguenti relazioni:
+\begin{itemize}
+    \item $v_{yf} = v_{yi} - gt$
+    \item $v_{y,media} = \frac{v_{yi} + v_{yf}}{2}$
+    \item $y_f = y_i + \frac{1}{2} (v_{yi} + v_{yf})t$
+    \item $y_f = y_i + v_{yi}t - \frac{1}{2} gt$
+    \item $v_{yf}^2 = v_{yi}^2 -2g(y_f - y_i)$
+\end{itemize}
 
+\paragraph{Altezza massima}
+L'altezza massima $h_{max}$ raggiunta dal corpo lanciato è determinabile notando che nel \emph{picco} la velocità verticale si annulla $v_y = 0$
+\begin{equation*}
+    v_{yf} = v_{yi} - gt \; \rightarrow \; 0 = v_i \sin{\theta_i} -gt
+\end{equation*}
+\begin{equation*}
+    t = \frac{v_i \sin{\theta_i}}{g} \;\;\; \text{(tempo per raggiungere } h_{max} \text{)}
+\end{equation*}
+Possiamo utilizzare questa espressione del tempo per calcolare l'altezza massima raggiunta. Partendo dalla precedente espressione per il calcolo di
+$y_f$ si sostituisce t con l'espressione appena trovata e $y_f$ diventa l'altezza $h_{max}$
+\begin{align*}
+    y_f = y_i + v_{yi}t - \tfrac{1}{2}gt^2 \;\; \rightarrow \;\; h_{max} & = 0 + (v_i \sin{\theta_i})\tfrac{v_i \sin{\theta_i}}{g} - \tfrac{1}{2}g(\tfrac{v_i \sin{\theta_i}}{g})^2 \\
+    h_{max}                                                              & = \frac{v_i^2 \sin{\theta_i}}{2g}
+\end{align*}
+
+\paragraph{Gittata}
+La gittata $R$ è la distanza orizzontale percorsa dal proiettile in un \emph{tempo doppio} di quello necessario a raggiungere l'altezza massima.
+\begin{align*}
+    x_f & = x_i + v_{xi}t                 & R & = v_{xi}t = (v_i \cos{\theta_i})2t                                                                     \\
+    t   & = \tfrac{v_i \sin{\theta_i}}{g} & R & = (v_i \cos{\theta_i}) \tfrac{2v_i \sin{\theta_i}}{g} = \tfrac{2v_i^2 \sin{\theta_i}\cos{\theta_i}}{g}
+\end{align*}
+Poiché vale la relazione $2\sin{\theta_i}\cos{\theta_i} = \sin{2\theta}$, si può scrivere:
+\begin{equation*}
+    R = \frac{v_i^2 \sin{2\theta_i}}{g}
+\end{equation*}
+
+\chapter{Dinamica}
+In fisica, la dinamica è il ramo della meccanica newtoniana che si occupa dello \emph{studio del moto dei corpi a partire dalle sue cause}, le \textbf{forze}
+o, in termini più concreti, delle circostanze che lo determinano e lo modificano nel tempo e nello spazio del suo sistema di riferimento.
+
+\section{Concetto di forza}
+Le \textbf{forze} sono definite come le cause che provocano un cambiamento nel moto del corpo, nella velocità del corpo.
+Si possono distinguere le forze in due categorie:
+\begin{enumerate}
+    \item \textbf{Forze di contatto}, ovvero forze che si esercitano attraverso il contatto fisico tra due oggetti.
+    \item \textbf{Forze di campo}, ovvero le forze che che non richiedono il contatto fisico tra gli oggetti, come la forza gravitazionale, la forza elettrica o la forza magnetica.
+\end{enumerate}
+Tuttavia, se vengono esaminate a livello atomico, tutte le forze, che classifichiamo come forze di contatto, sono in realtà dovute
+alle forze elettriche (forze di campo). Di fatto tutte le forze conosciute in natura sono \emph{forze di campo}:
+\begin{enumerate}
+    \item Attrazione gravitazionale
+    \item Forze elettromagnetiche
+    \item Forze nucleari forti tra particelle subatomiche
+    \item Forze nucleari deboli (in processi di decadimento radioattivo)
+\end{enumerate}
+
+\noindent Le forze hanno una \textbf{natura vettoriale}. È possibile infatti provare sperimentalmente che le forze agiscono secondo una
+natura vettoriale e di conseguenza è necessario utilizzare le regole della \emph{somma di vettori} per ottenere la forza risultante su di un corpo.
+
+\newpage
+\begin{figure*}[h]
+    \centering
+    \includegraphics[scale=0.5]{natura_vettoriale_forze}
+\end{figure*}
+Come mostrato nella nel punto \emph{d} della figura, le due forze vengono applicate simultaneamente con $\vec{F}_1$ verticalmente verso
+il basso e $\vec{F}_2$ orizzontalmente. In questo caso, l’indicatore indicherà \emph{2.24 cm}. La forza $\vec{F}$ che produce
+la stessa lettura della somma dei due vettori $\vec{F}_1$ e $\vec{F}_2$. In altre parole, $\abs{\vec{F}_1} = \sqrt{F_1^2 + F_2^2} = 2.24$
+unità e la sua direzione è $\theta = \tan^{-1} (-0.500) = -26.6$°
+
+\paragraph{Dinamometro}
+Il dinamometro è uno strumento di misura utilizzato in meccanica per determinare l'entità di una forza ad esso applicata.
+Il meccanismo di misurazione utilizza il principio della legge di Hooke, per il quale la deformazione di un materiale elastico è direttamente proporzionale alla forza applicata al materiale stesso.
+
+\newpage
+\section{Principio d'Inerzia - prima legge di Newton}
+La \textbf{prima legge di Newton} del moto, che viene spesso chiamata \textbf{legge d’inerzia},
+definisce una particolare classe di sistemi di riferimento detti \textbf{sistemi inerziali}.
+Questa legge può essere espressa nel seguente modo:
+\begin{displayquote}
+    \centering
+    Se un corpo non interagisce con altri corpi, si può trovare un sistema di riferimento nel quale la sua accelerazione è nulla.
+\end{displayquote}
+Un tale sistema di riferimento viene chiamato \textbf{sistema di riferimento inerziale}. 
+Ogni sistema di riferimento che si muove a velocità costante rispetto ad un sistema di riferimento inerziale, è esso stesso un sistema inerziale.
+
+È possibile riformulare la prmia legge di Newton in un modo più pratico:
+\begin{displayquote}
+    \centering
+    In assenza di forze esterne e se osservato da un sistema di riferimento inerziale, un corpo in quiete rimane in quiete ed un 
+    corpo in moto rimane in moto (con moto rettilineo uniforme).
+\end{displayquote}
 
 
 
