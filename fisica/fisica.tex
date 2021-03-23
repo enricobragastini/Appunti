@@ -20,6 +20,7 @@
 \usepackage{multicol}
 \usepackage[arrowdel]{physics} 
 \usepackage{amsmath}
+\usepackage{tikz}
 
 \usepackage{graphicx}           % IMMAGINI
 \graphicspath{ {./images/} }
@@ -302,9 +303,9 @@ Useremo i simboli $\hat{i}$, $\hat{j}$, e $\hat{k}$ per rappresentare i vettori 
     \includegraphics[scale=0.5]{vettori_unitari}
     \centering
 \end{figure}
-Consideriamo un vettore $\vec{A}$ che giace nel piano $xy$ come in figura. 
-Il prodotto della componente $A_x$ per il vettore unitario $\hat{i}$ è il vettore $\vec{A_x} = A_x \hat{i}$ parallelo all'asse delle $x$ e di modulo $\abs{A_x}$. 
-Analogamente, $\vec{A_y} = A_y \hat{j}$ è un vettore di modulo $\abs{A_y}$ parallelo all’asse $y$. 
+Consideriamo un vettore $\vec{A}$ che giace nel piano $xy$ come in figura.
+Il prodotto della componente $A_x$ per il vettore unitario $\hat{i}$ è il vettore $\vec{A_x} = A_x \hat{i}$ parallelo all'asse delle $x$ e di modulo $\abs{A_x}$.
+Analogamente, $\vec{A_y} = A_y \hat{j}$ è un vettore di modulo $\abs{A_y}$ parallelo all’asse $y$.
 Così, nella notazione dei vettori unitari, il vettore $\vec{A}$ è
 \begin{equation*}
     \vec{A} = A_x \hat{i} \cdot A_y \hat{j}
@@ -343,10 +344,10 @@ La \textbf{Cinematica} è un ramo della \textbf{meccanica classica} che si occup
 \section{Moto in una dimensione}
 
 \paragraph{Punto materiale}
-Nello studio del moto traslatorio utilizziamo il modello \textbf{punto materiale} e descriviamo il moto di un corpo approssimandolo ad 
+Nello studio del moto traslatorio utilizziamo il modello \textbf{punto materiale} e descriviamo il moto di un corpo approssimandolo ad
 “una particella” senza considerare le sue dimensioni reali.
 
-In generale un punto materiale è quel corpo che \emph{ha una massa} ma \emph{ha dimensioni infinitesimali}. 
+In generale un punto materiale è quel corpo che \emph{ha una massa} ma \emph{ha dimensioni infinitesimali}.
 
 \section{Posizione, spostamento e distanza}
 
@@ -364,13 +365,13 @@ Lo spostamento è una \emph{grandeza vettoriale}, ma sul moto rettilineo è poss
 \paragraph{Distanza percorsa}
 La distanza percorsa \emph{non è lo spostamento}. La distanza indica la lunghezza del cammino percorso da una particella.
 
-Supponiamo che un'automobile parta dal punto $A$, arrivi al punto $B$ e poi ritorni al punto $A$. In questo caso abbiamo che lo spostamento 
+Supponiamo che un'automobile parta dal punto $A$, arrivi al punto $B$ e poi ritorni al punto $A$. In questo caso abbiamo che lo spostamento
 è nullo, infatti $x_i = x_f$, ovvero $\Delta x = 0$. Mentre la distanza percorsa corrisponde a $2 (B-A)$.
 
 \section{Velocità media e istantanea}
 
 \paragraph{Velocità media}
-La \textbf{velocità media}, $v_{m}$ di un punto materiale, è definita come il rapporto tra lo spostamento $\Delta x$ del punto materiale 
+La \textbf{velocità media}, $v_{m}$ di un punto materiale, è definita come il rapporto tra lo spostamento $\Delta x$ del punto materiale
 e l’intervallo di tempo $\Delta t$ durante il quale lo spostamento è avvenuto:
 \begin{equation*}
     v_{x,media} \equiv \frac{\Delta x}{\Delta t}
@@ -378,7 +379,7 @@ e l’intervallo di tempo $\Delta t$ durante il quale lo spostamento è avvenuto
 
 \begin{itemize}
     \item L'unità di misura è: $\frac{m}{s}$
-    \item Se $\Delta x > 0$ (spostamento nel verso positivo), allora $v_m > 0$. 
+    \item Se $\Delta x > 0$ (spostamento nel verso positivo), allora $v_m > 0$.
     \item Se $\Delta x < 0$ (spostamento nel verso negativo), allora $v_m < 0$
 \end{itemize}
 
@@ -401,9 +402,9 @@ quando $\Delta t$ tende a $0$. Nel linguaggio del calcolo differenziale questo l
 Espressione analitica dello spostamento di un punto materiale: $x=-4t + 2t^2$
 Calcolo della velocità istantanea a $t = 2,5s$
 \begin{align*}
-    x &= -4t + 2t^2 \\
-    \frac{dx}{dt} &= -4 + 4t \\ 
-    v_x &= 6 \; m/s
+    x             & = -4t + 2t^2 \\
+    \frac{dx}{dt} & = -4 + 4t    \\
+    v_x           & = 6 \; m/s
 \end{align*}
 
 \section{Moto Rettilineo Uniforme}
@@ -420,7 +421,7 @@ Basandoci su questa definizione si possono ricavare le seguenti equazioni:
 \section{Accelerazione media e istantanea}
 
 \paragraph{Accelerazione media} Quando la velocità cambia nel tempo, si dice che la particella sta accelerando.
-L’accelerazione media $a_{x,media}$ del punto materiale è definita come la variazione della velocità 
+L’accelerazione media $a_{x,media}$ del punto materiale è definita come la variazione della velocità
 $\Delta v_x$ divisa per l’intervallo di tempo $\Delta t$ in cui avviene la variazione:
 \begin{equation*}
     a_{x,media} \equiv \frac{\Delta v_x}{\Delta t} = \frac{v_{xf} - v_{xi}}{t_f - t_i   }
@@ -437,17 +438,122 @@ L’accelerazione istantanea è la derivata della velocità rispetto al tempo ch
 \section{Moto rettilineo uniformemente accelerato}
 Nel caso del \textbf{moto rettilineo uniformemente accelerato}, il moto del \emph{punto materiale} avviene con \emph{accelerazione costante}.
 
-Di conseguenza l'accelerazione media e istantanea coincidono.
+~\newline
+\noindent Se il moto avviene con accelerazione costante, allora la velocità media e la velocità istantanea coincidono.
+\begin{equation*}
+    a_x = \frac{v_{xf}-v_{xi}}{t_f-t_i}
+\end{equation*}
+Supponendo $t_i = 0$ otteniamo $a_x = \frac{v_{xf}-v_{xi}}{t}$ e quindi $v_{xf} = v_{xi} + a_x t$ (per $a_x$ costante)
 
-Basandoci sulla definizione di questo moto si ricavano le seguenti equazioni:
-\begin{itemize}
-    \item $a_{x,media} = \frac{v_{xf}-v_{xi}}{t_f-t_i} \rightarrow a_x=\frac{v_{xf}-v_{xi}}{t-0}$ 
-    \item $v_{x,f} = v_{x,i} + a_{x}t$
-\end{itemize}
+Poiché la velocità varia linearmente con il tempo, la velocità media in un intervallo di tempo
+arbitrario è uguale alla \emph{media aritmetica} della velocità iniziale $v_{xi}$ e della velocità finale $v_{xf}$:
+\begin{equation*}
+    v_{media} = \frac{v_{xi} + v_{xf}}{2} = \frac{1}{2} (v_{xi} + v_{xf}) \; \; \text{(per } a_{x} \text{ costante)}
+\end{equation*}
 
+Ora, ricordando che $\Delta x = x_f - x_i$ e che $\Delta t = t_f - 0 = t$, si ottiene:
+\begin{equation*}
+    x_f - x_i = v_{media} t = \frac{1}{2} (v_{xi} + v_{xf}) t
+\end{equation*}
+\begin{align*}
+    x_f & = x_i + \frac{1}{2} (v_{xi} + v_{xf}) t                                         \\
+    x_f & = x_i + \frac{1}{2} [v_{xi} + (v_{xi} + a_x t)] t                               \\
+    x_f & = x_i + v_{xi} t + \frac{1}{2} a_x t^2 \; \; \text{(per } a_x \text{ costante)}
+\end{align*}
+Si può infine ottenere un’espressione per la velocità finale che non contiene il tempo:
+\begin{equation*}
+    v_{xf}^2 = v_{xi}^2 + 2ax(x_f - x_i)
+\end{equation*}
 
+\subsection{Corpi in caduta libera}
+È un fatto ben noto che vicino alla superficie della Terra e senza la resistenza dell’aria,
+tutti i corpi sotto l’influenza della gravità terrestre cadono verso la Terra con la \textbf{stessa accelerazione costante}.
 
+Indicheremo il modulo dell’accelerazione di caduta libera, detta anche accelerazione di gravità con il simbolo $g$.
+Sulla superficie della Terra, il valore di $g$ è approssimativamente 9.80 $m/s^2$.
 
+\section{Moto in due dimensioni}
+A differenza del moto in una sola dimensione, nel \emph{moto a due dimensioni}, le posizioni di inizio e di fine dello spostamento
+di un punto materiale sono \textbf{grandezze vettoriali} e sono indicate da $\vec{r_i}$ e $\vec{r_f}$.
+
+La posizione è quindi descritta dal \emph{vettore} $\vec{r}$. Lo spostamento del punto materiale è indicato con $\Delta \vec{r} = \vec{r_f}-\vec{r_i}$.
+
+\paragraph{Velocità media}
+La velocità media è definita come:
+\begin{equation*}
+    \vec{v}_{media} \equiv \frac{\Delta \vec{r}}{\Delta t}
+\end{equation*}
+La direzione e il verso di $\vec{v}_{media}$ sono le stesse di $\Delta \vec{r}$ in quanto $\Delta t$ è uno scalare.
+
+\paragraph{Velocità istantanea}
+La velocità istantanea è definita come:
+\begin{equation*}
+    \vec{v} \equiv \lim_{\Delta t \to 0} \frac{\Delta \vec{r}}{\Delta t} = \frac{d \vec{r}}{dt}
+\end{equation*}
+La velocità istantanea è la \emph{derivata} del vettore posizione rispetto al
+tempo. La direzione del vettore velocità istantanea in un punto è quella della retta tangente alla traiettoria in quel punto ed è orientata nel verso del moto.
+
+\paragraph{Accelerazione media}
+Conoscendo la velocità in ciascuno dei due punti è possibile determinare l'accelerazione media:
+\begin{equation*}
+    \vec{a}_{media} \equiv \frac{\Delta \vec{v}}{\Delta t} = \frac{\vec{v_f} - \vec{v_i}}{t_f - t_i}
+\end{equation*}
+
+\paragraph{Accelerazione istantanea}
+Dall'accelerazione media è possibile ricavare l'accelerazione istantanea:
+\begin{equation*}
+    \vec{a} \equiv \lim_{\Delta t \to 0} \frac{\Delta \vec{v}}{\Delta t} = \frac{d\vec{v}}{dt}
+\end{equation*}
+
+\newpage
+\subsection{Moto in due dimensioni con accelerazione costante}
+Il moto in due dimensioni può essere modellizzato come \emph{due moti indipendenti} lungo
+ciascuna delle due direzioni ortogonali che possono essere associate agli \emph{assi $x$ e $y$}.
+Qualunque azione in direzione $x$ non influenza il moto in direzione $y$ e viceversa.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw[thin,gray!40] (0,0) grid (4,4);
+        \draw[<->] (0,0)--(4,0) node[right]{$x$};
+        \draw[<->] (0,0)--(0,4) node[above]{$y$};
+        \draw[line width=2pt,black,-stealth](0,0)--(2.5,2.5) node[anchor=south west]{$P(x,y)$};
+        \draw[line width=1pt,black,-stealth](0,0)--(0,2.5) node[anchor=north east]{$y \hat{j}$};
+        \draw[line width=1pt,black,-stealth](0,0)--(2.5,0) node[anchor=north east]{$x \hat{i}$};
+
+        \draw[dashed,line width=0.5pt,black,](0,2.5)--(2.5,2.5);
+        \draw[dashed,line width=0.5pt,black,](2.5,0)--(2.5,2.5);
+    \end{tikzpicture}
+\end{figure}
+\noindent Il \textbf{vettore posizione} per un punto materiale che si muove nel piano $xy$ può essere scritto come
+\begin{equation*}
+    \vec{r} = x\hat{i} + y\hat{j}
+\end{equation*}
+Se il vettore posizione è noto, la \textbf{velocità} può essere ricavata:
+\begin{equation*}
+    \vec{v} = \frac{d\vec{r}}{dt} = \frac{dx}{dt}\hat{i}+\frac{dy}{dt}\hat{j} = v_x \hat{i} + v_y \hat{j}
+\end{equation*}
+Essendo l'\textbf{accelerazione costante}, anche $a_x$ e $a_y$ sono costanti.
+
+\noindent Sostituendo $v_{xf} = v_{xi} + a_x t$ e $v_{yf} = v_{yi} + a_y t$ alla formula della velocità si ottiene:
+\begin{align*}
+    v_f & = (v_{xi} + a_x t)\hat{i} + (v_{yi} + a_y t)\hat{j}            \\
+        & = (v_{xi}\hat{i} + v_{yi}\hat{j}) + (a_x\hat{i} + a_y\hat{j})t \\
+        & = v_i + at
+\end{align*}
+
+\noindent Analogamente le coordinate $x_f$ e $y_f$ sono date da:
+\begin{align*}
+    x_f & = x_i + v_{xi}t + \frac{1}{2}a_xt^2 & y_f & = v_i + v_{yi} + \frac{1}{2}a_yt^2
+\end{align*}
+
+\noindent Sostituendole nella formula del vettore posizione si ottiene:
+\begin{align*}
+    \vec{r}_f & = x\hat{i} + y\hat{j}                                                                                            \\
+              & = (x_i + v_{xi}t + \frac{1}{2}a_xt^2)\hat{i} + (v_i + v_{yi} + \frac{1}{2}a_yt^2)\hat{j}                         \\
+              & = (x_i \hat{i} + y_i \hat{j}) + (v_{xi} \hat{i} + v_{yi} \hat{j})t + \frac{1}{2} (a_x \hat{i} + a_y \hat{j}) t^2 \\
+              & = \vec{r}_i + \vec{v}_i t + \frac{1}{2} \vec{a} t^2
+\end{align*}
 
 
 
