@@ -26,6 +26,7 @@
 \graphicspath{ {./images/} }
 
 \usepackage{csquotes}
+\usepackage{caption}
 
 % INFORMAZIONI SUL DOCUMENTO
 \title{\Large{\textbf{Fisica 1}}}
@@ -657,7 +658,7 @@ Il dinamometro è uno strumento di misura utilizzato in meccanica per determinar
 Il meccanismo di misurazione utilizza il principio della legge di Hooke, per il quale la deformazione di un materiale elastico è direttamente proporzionale alla forza applicata al materiale stesso.
 
 \newpage
-\section{Principio d'Inerzia - prima legge di Newton}
+\section{Prima legge di Newton - principio d'Inerzia}
 La \textbf{prima legge di Newton} del moto, che viene spesso chiamata \textbf{legge d’inerzia},
 definisce una particolare classe di sistemi di riferimento detti \textbf{sistemi inerziali}.
 Questa legge può essere espressa nel seguente modo:
@@ -665,15 +666,112 @@ Questa legge può essere espressa nel seguente modo:
     \centering
     Se un corpo non interagisce con altri corpi, si può trovare un sistema di riferimento nel quale la sua accelerazione è nulla.
 \end{displayquote}
-Un tale sistema di riferimento viene chiamato \textbf{sistema di riferimento inerziale}. 
-Ogni sistema di riferimento che si muove a velocità costante rispetto ad un sistema di riferimento inerziale, è esso stesso un sistema inerziale.
+Un tale sistema di riferimento viene chiamato \textbf{sistema di riferimento inerziale}.
+Ogni sistema di riferimento che si muove a velocità costante rispetto ad un sistema di riferimento inerziale, è esso stesso un \emph{sistema inerziale}.
 
-È possibile riformulare la prmia legge di Newton in un modo più pratico:
+~\newline
+Per i nostri scopi possiamo considerare anche la \emph{Terra come un sistema inerziale}. La Terra in realtà non è un sistema inerziale a causa del suo moto
+orbitale intorno al Sole e del suo moto di rotazione intorno all’asse terrestre.
+Queste accelerazioni hanno comunque valori piccoli rispetto a $g$ e possono spesso essere trascurate.
+
+\noindent È possibile riformulare la \emph{prima legge di Newton} in un modo più pratico:
 \begin{displayquote}
     \centering
-    In assenza di forze esterne e se osservato da un sistema di riferimento inerziale, un corpo in quiete rimane in quiete ed un 
+    In assenza di forze esterne e se osservato da un sistema di riferimento inerziale, un corpo in quiete rimane in quiete ed un
     corpo in moto rimane in moto (con moto rettilineo uniforme).
 \end{displayquote}
+
+\paragraph{Inerzia} È possibile definire l'\emph{inerzia} come la \emph{tendenza di un corpo a non modificare il suo stato di moto}.
+
+\subsection{Massa}
+Quantitativamente il concetto di \emph{inerzia} viene quantificato dalla \textbf{massa}. La massa è la proprietà (scalare) di un corpo che misura
+quanta resistenza un corpo offre al cambiamento di velocità. È una delle grandezze fondamentali.
+
+L'unità di misura della massa \emph{m} è il \emph{kg}.
+
+\paragraph{Rapporto massa-accelerazione}
+Tra le due grandezze vi è un rapporto \emph{inversamente proporzionale}.
+
+Si supponga di applicare una stessa forza $\vec{F}$ a due masse diverse $m_1$ e $m_2$, andando a misurare le accelerazioni $a_1$ e $a_2$ che la forza ha provocato.
+Si verificherà la seguente relazione: $\frac{m_1}{m_2} \equiv \frac{a_1}{a_2}$
+
+\newpage
+\section{Seconda legge di Newton}
+La \textbf{seconda legge di Newton} risponde alla domanda: che cosa succede ad un corpo se su di esso agiscono una o più forze?
+\begin{itemize}
+    \item L’accelerazione di un corpo è \emph{direttamente proporzionale} alla forza applicata su di esso: $\vec{F} \propto \vec{a}$
+    \item L'intensità dell'accelerazione di un corpo è \emph{inversamente proporzionale} alla sua massa: $\abs{\vec{a}} \propto \tfrac{1}{m}$
+\end{itemize}
+
+Queste osservazioni sono sintetizzate dalla \emph{seconda legge di Newton}:
+\begin{displayquote}
+    \centering
+    Misurata in un sistema di riferimento inerziale, l’accelerazione di un corpo è direttamente
+    proporzionale alla forza risultante agente su di esso ed inversamente proporzionale alla sua massa:
+    \begin{equation*}
+        \vec{a} \propto \frac{\sum\vec{F}}{m}
+    \end{equation*}
+\end{displayquote}
+Scegliendo la costante di proporzionalità pari a 1, è possibile scrivere la seguente equazione:
+\begin{equation*}
+    \sum\vec{F} = m\vec{a}
+\end{equation*}
+Questa equazione è un \emph{espressione vettoriale} e quindi è equivalente alle seguenti tre equazioni scalari, una per ogni componente:
+\begin{align*}
+    \sum F_x & = ma_x & \sum F_y & = ma_y & \sum F_z & = ma_z
+\end{align*}
+
+\paragraph{Unità di misura della forza}
+L’unità di misura della forza nel SI, è il newton (N).
+Una forza di $1 \; N$ è la forza che, se applicata ad un corpo di massa $1 \; kg$, produce una accelerazione di $1 \; m/s^2$.
+
+Il newton può essere espresso in funzione delle unità fondametali di massa, lunghezza e tempo:
+\begin{equation*}
+    1 \; N \equiv 1 \; kg \cdot m/s^2
+\end{equation*}
+Per il sistema \emph{c.g.s.} esiste l'unità di misura ''dina''. 1 dina è la forza, che applicata a un corpo di massa 1 $g$, produce un accelerazione di 1 $cm/s^2$.
+
+\subsection{La forza gravitazionale e il peso}
+Un corpo in caduta libera (lasciato libero in prossimità della superficie terrestre) si muove con accelerazione costante pari a $g$ (9.81 $m/s^2$).
+In base alla seconda legge di Newton, la forza che produce questa accelerazione, la forza di attrazione gravitazionale, equivale a $\vec{F_g} = mg$.
+
+Il \emph{modulo} di questa forza viene chiamato \textbf{peso}: $F_g = mg$ (misurato in $N$).
+
+\section{Terza legge di Newton}
+«A un'azione è sempre opposta un'uguale reazione: ovvero, le azioni vicendevoli di due corpi l'uno sull'altro sono sempre uguali e dirette verso parti opposte.»
+
+\begin{displayquote}
+    \centering
+    Per ogni forza, che un corpo $A$ esercita su un altro corpo $B$, ne esiste istantaneamente un'altra
+    uguale in modulo e direzione, ma opposta in verso, causata dal corpo $B$ che agisce sul corpo $A$.
+\end{displayquote}
+
+~\newline
+\underline{Esempio grafico:}
+
+\begin{figure*}[h]
+    \centering
+    \includegraphics[scale=0.4]{terza_legge_newton}
+\end{figure*}
+\noindent Vediamo due corpi interagiscono che tra loro, la forza $\vec{F}_{12}$ esercitata dal corpo 1 sul corpo 2 è uguale in intensità ed è opposta
+in verso alla forza $\vec{F}_{21}$ esercitata dal corpo 2 sul corpo 1:
+\begin{equation*}
+    \vec{F}_{12} = -\vec{F}_{21}
+\end{equation*}
+
+\paragraph{Diagramma di corpo libero}  Quando analizziamo un corpo soggetto a più forze, siamo interessati alla \textbf{forza risultante} 
+su questo singolo corpo, che schematizzeremo come \emph{punto materiale}. Il diagramma di corpo libero, quindi, ci aiuta ad isolare solamente le forze che 
+agiscono sul corpo ed eliminare dalla nostra analisi tutte le altre forze.
+
+Nel \textbf{diagramma di corpo libero} è utilizzato il modello punto materiale per rappresentare il corpo come un punto e le forze che agiscono sul corpo sono applicate al punto.
+
+\begin{figure*}[h]
+    \centering
+    \includegraphics[scale=0.4]{diagramma_corpo_libero}
+    \caption*{\small Il punto C dello schema rappresenta il \emph{diagramma di corpo libero}}
+\end{figure*}
+
+
 
 
 
