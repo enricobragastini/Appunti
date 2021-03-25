@@ -161,30 +161,6 @@ Il linguaggio Assembly è un linguaggio di programmazione molto simile al lingua
 \end{enumerate}
 Il linguaggio Assembly da noi utilizzato sarà l'\textbf{Intel 80x86} con sintassi \textbf{AT\&T}.
 
-\subsection{Istruzioni}
-Le istruzioni possono avere una \textbf{codifica fissa} oppure una \textbf{codifica variabile}.
-A scopo didattico lavoreremo con istruzioni a codifica fissa.
-
-\noindent La struttura di un'istruzione è del tipo \emph{OPCODE OPER1, OPER2} dove:
-\begin{itemize}
-    \item \textbf{OPCODE} è il nome dell'istruzione stessa
-    \item \textbf{OPER1} è il primo operando dell'istruzione. In certe operazioni è anche l'unico operando.
-    \item \textbf{OPER2} è il secondo operando dell'istruione. Quando presente, rappresenta anche la \emph{destinazione} dell'operazione, ovvero dove
-          verrà salvato il risultato.
-\end{itemize}
-
-\noindent Alcuni esempi di istruzioni:
-\begin{itemize}
-    \item MOVL
-    \item PUSHL - POPL
-    \item ADDL - SUBL
-    \item MUL - DIV
-    \item CMPL
-    \item JMP (e derivate)
-    \item CALL
-    \item NOP
-\end{itemize}
-
 \subsection{Metodi di Indirizzamento}
 Il metodo di indirizzamento dice alla CPU con che modalità deve \emph{recuperare} il dato che le serve per lavorare.
 
@@ -225,32 +201,130 @@ In questo metodo di indirizzamento, si utilizza sempre un \emph{indirizzo di mem
 ~\newline
 \underline{Esempio:} \tabto{3cm} \texttt{MOVL \$4(\%EAX), \%EBX}
 
+
+\subsection{Istruzioni}
+Le istruzioni possono avere una \textbf{codifica fissa} oppure una \textbf{codifica variabile}.
+A scopo didattico lavoreremo con istruzioni a codifica fissa.
+
+\noindent La struttura di un'istruzione è del tipo \emph{OPCODE OPER1, OPER2} dove:
+\begin{itemize}
+    \item \textbf{OPCODE} è il nome dell'istruzione stessa. Un certo numero di bit dell'istruzione definiscono qual è l'operazione Assembly da eseguire.
+    La definizione dell'insieme degli \emph{opcode} fa parte dell'\emph{ISA}.    
+    \item \textbf{OPER1} è il primo operando dell'istruzione. In certe operazioni è anche l'unico operando.
+    \item \textbf{OPER2} è il secondo operando dell'istruione. Quando presente, rappresenta anche la \emph{destinazione} dell'operazione, ovvero dove
+          verrà salvato il risultato.
+\end{itemize}
+
+\noindent Alcuni esempi di istruzioni:
+\begin{itemize}
+    \item Operazioni con la memoria
+    \begin{itemize}
+        \item \texttt{MOVL}: Permette lo spostamento di dati dalla memoria ai registri (e viceversa) e tra i registri stessi.
+        \item \texttt{PUSHL / POPL}: Permettono la gestione dello \underline{stack}
+    \end{itemize}
+    \item Operazioni Aritmetiche
+    \begin{itemize}
+        \item \texttt{ADDL}: operazione di somma
+        \item \texttt{SUBL}: operazione di sottrazione
+    \end{itemize}
+    \item Gestione del flusso operativo
+    \begin{itemize}
+        \item \texttt{CMPL}: compara due dati. Dopo la comparazione viene modificato il bit apposito nel registro PSW
+        \item \texttt{JMP}: Operazione di \emph{salto} a un'istruzione diversa dalla successiva. Ne esistono varie derivate
+        \begin{itemize}
+            \item \texttt{JG}: salta se maggiore
+            \item \texttt{JL}: salta se minore
+            \item \texttt{JE}: salta se uguale
+            \item \texttt{JGE}: salta se maggiore o uguale
+            \item \texttt{JLE}: salta se minore o uguale
+            \item \texttt{JZ}: salta se uguale a zero
+            \item \texttt{JNZ}: salta se diverso da zero
+            \item \texttt{JMP}: salto incondizionato
+        \end{itemize}
+        \item \texttt{CALL}: chiamata a sottoprogramma, definito da una \emph{etichetta}. Dopo l'esecuzione del sottoprogramma si prosegue con l'istruzione successiva (mediante la chiamata dell'istruzione \texttt{ret}).
+    \end{itemize}
+    \item \texttt{NOP}: operazione nulla che non effettua niente. È utile in certe situazioni particolari
+\end{itemize}
+
+
 \subsection{Microistruzioni}
 Ogni istruzione Assembly viene eseguita in più passi minori. Innanzitutto perché ogni istruzione viene eseguita dalla CPU in tre fasi (\emph{fetch}, \emph{decode}
 ed \emph{execute}) e ognuna di queste fasi corrisponde a un insieme di \textbf{microistruzioni} eseguite internamente dalla CPU.
 
 ~\newline
-\underline{Esempio di istruzione:} \tabto{4cm} \texttt{ADDL \%EAX, \%EBX}
+\underline{Esempio - Indirizzamento diretto a registro:} \tabto{9cm} \texttt{ADDL \%EAX, \%EBX}
 \begin{enumerate}
     \item Fetch: \texttt{PCout, MARin, READ, SELECT4, ADD, Zin} \newline
-    Il valore in PC viene "lasciato uscire" sul bus e "fatto entrare" in MAR. Viene dato il segnale di READ alla memoria per leggere la prossima istruzione. SELECT4, ADD e Zin permetteranno PC (gli viene aggiunto il valore 4 mediante la ALU)
-    
+          Il valore in PC viene "lasciato uscire" sul bus e "fatto entrare" in MAR. Viene dato il segnale di READ alla memoria per leggere la prossima istruzione. SELECT4, ADD e Zin permetteranno PC (gli viene aggiunto il valore 4 mediante la ALU)
+
     \item Fetch: \texttt{WMFC, Zout, PCin} \newline
-    Viene \emph{messo in pausa} il clock della CPU in attesa che la memoria recuperi il dato e lo scriva sul bus dati. \newline Inoltre il valore della somma precedente viene fatto uscire dalla ALU e salvato in PC (PC è stato quindi incrementato).
-    
+          Viene \emph{messo in pausa} il clock della CPU in attesa che la memoria recuperi il dato e lo scriva sul bus dati. \newline Inoltre il valore della somma precedente viene fatto uscire dalla ALU e salvato in PC (PC è stato quindi incrementato).
+
     \item Fetch: \texttt{MDRout, IRin} \newline
-    Il valore dalla memoria è stato scritto sul bus e quindi in MDR. Il dato viene fatto "uscire" da MDR e viene fatto "entrare" in IR. A questo punto l'istruzione da eseguire è stata \emph{caricata} ed è pronta per essere eseguita.
+          Il valore dalla memoria è stato scritto sul bus e quindi in MDR. Il dato viene fatto "uscire" da MDR e viene fatto "entrare" in IR. A questo punto l'istruzione da eseguire è stata \emph{caricata} ed è pronta per essere eseguita.
 
     \item Execute: \texttt{EAXout, Yin} \newline
-    Il valore presente in EAX viene scritto nel registro Y in ingresso alla ALU.
+          Il valore presente in EAX viene scritto nel registro Y in ingresso alla ALU.
 
     \item Execute: \texttt{EBXout, SELECTy, ADD, Zin} \newline
-    Il valore in EBX viene fatto "uscire" sul bus e quindi è già leggibile dalla ALU. A questo punto il mux lascia passare il valore di Y nell'altro ingresso della ALU e il segnale ADD fa eseguire la somma tra i due valori. Il risultato viene fatto entrare in Z.
+          Il valore in EBX viene fatto "uscire" sul bus e quindi è già leggibile dalla ALU. A questo punto il mux lascia passare il valore di Y nell'altro ingresso della ALU e il segnale ADD fa eseguire la somma tra i due valori. Il risultato viene fatto entrare in Z.
 
     \item Execute: \texttt{Zout, EBXin, END} \newline
-    Il valore ottenuto dalla somma che si trova in Z viene quindi salvato nel secondo operando, ovvero EBX. Il segnale di END comunica il compimento dell'istruzione.
+          Il valore ottenuto dalla somma che si trova in Z viene quindi salvato nel secondo operando, ovvero EBX. Il segnale di END comunica il compimento dell'istruzione.
 \end{enumerate}
 Essendo i valori da sommare già presenti nei registri, ovvero entrambi con \emph{indirizzamento diretto a registro}, la fase di decode non è necessaria: i valori sono già pronti per essere utilizzati dalla ALU.
+
+~\newline
+\underline{Esempio - Indirizzamento indiretto a registro:} \tabto{9cm} \texttt{ADDL (\%EAX), \%EBX}
+\begin{enumerate}
+    \item Fetch: \texttt{PCout, MARin, READ, SELECT4, ADD, Zin}
+    \item Fetch: \texttt{WMFC, Zout, PCin}
+    \item Fetch: \texttt{MDRout, IRin}
+    \item Decode: \texttt{EAXout, MARin, READ}
+    \item Decode / Execute: \texttt{WMFC, EBXout, Yin}
+    \item Decode / Execute: \texttt{MDRout, SELECTy, ADD, Zin}
+    \item Execute: \texttt{Xout, EBXin, END}
+\end{enumerate}
+
+\section{Memoria}
+La sezione di memoria che il sistema operativo fornisce a un programma per l'esecuzione, la quale parte
+dall'indirizzo $0$ all'indirizzo $max$, è concettualmente suddivisa in quattro parti:
+\begin{enumerate}
+    \item \textbf{Sezione del codice}: contiene le istruzioni del codice da eseguire
+    \item \textbf{Dati statici}: contiene tutte le \emph{variabili statiche} presenti all'interno del codice. 
+    \item \textbf{Heap}: è una \emph{sezione \textbf{dinamica}}, ovvero che varia durante l'esecuzione.
+    Ogni volta che il programma necessita di allocare uno spazio di memoria non dimensionabile a priori, richiede al \emph{Sistema Operativo} lo spazio di cui
+    ha bisogno. Quando il S.O. fornisce lo spazio richiesto, che potrebbe anche essere l'\textbf{intera memoria}, questo farà parte della sezione \emph{Heap}. È il caso di quando si utilizzano le funzioni \texttt{malloc()} e \texttt{mfree()} in C.
+    \item \textbf{Stack (pila)}: è una \emph{sezione \textbf{statica}}, ovvero di dimensioni fisse, per l'allocazione di variabili dalle dimensioni statiche e
+    quindi conosciute al momento della programmazione. La dimensione dello \emph{stack} ha un range che va da qualche \emph{KB} a non oltre qualche \emph{MB}, pertanto non 
+    è necessario stare attenti a non saturare questa sezione di memoria.
+\end{enumerate}
+
+\subsection{Il funzionamento dello Stack}
+Le \emph{word} vengono inserite all'interno dello stack a partire dal basso verso l'alto, come una \emph{pila} di piatti.
+Quando si richiede di leggere dallo stack, le \emph{word} vengono recuperate dall'alto verso il basso.
+
+Il registro \textbf{ESP} \emph{(Stack Pointer)} contiene in ogni momento il puntatore all'ultima \emph{word} inserita nello stack.
+
+~\newline
+Le istruzioni a disposizione per l'interazione con lo stack sono \texttt{PUSHL} e \texttt{POPL}:
+\begin{itemize}
+    \item \texttt{PUSHL <VALUE>}: viene inserito il valore all'interno dello stack e viene \emph{decrementato il registro ESP}. \newline
+    Per esempio, l'istruzione \texttt{PUSHL \%EAX} corrisponde a:
+    \begin{itemize}
+        \item \texttt{SUBL \$4, \%ESP}
+        \item \texttt{MOVL \%EAX, (\%ESP)}
+    \end{itemize}
+    \item \texttt{POPL <VALUE>}: viene recuperato ciò che c'è in cima allo stack e viene \emph{incrementato il registro ESP}. \newline
+    Per esempio, l'istruzione \texttt{POPL \%EBX} corrisponde a:
+    \begin{itemize}
+        \item \texttt{MOVL (\%ESP), \%EBX}
+        \item \texttt{ADDL \$4, \%ESP}
+    \end{itemize}
+\end{itemize}
+È errato utilizzare le espressioni equivalenti di \texttt{PUSHL} e \texttt{POPL}. Questo perché per ogni istruzione abbiamo la \emph{certezza} che la CPU
+porterà a termine l'istruzione senza fare altro. Tra una istruzione e un'altra noi non possiamo avere la certezza di ciò, per cui utilizzando le due istruzioni equivalenti,
+tra una e l'altra la CPU potrebbe fare delle cose a noi sconosciute, portando a effetti indesiderati.
 
 
 
