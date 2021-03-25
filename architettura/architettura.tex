@@ -1,4 +1,4 @@
-\documentclass[12pt,oneside]{book}
+\documentclass[a4paper,11pt,oneside]{book}
 
 % PACCHETTI
 \usepackage{hyperref}           % hyperlinks
@@ -9,7 +9,8 @@
     outer=3cm,
     top=3cm,
     bottom=3cm,
-    bindingoffset=1.2cm
+    bindingoffset=1.2cm,
+    headheight=14.5pt
 ]{geometry}
 \usepackage[utf8]{inputenc}     % 3 pacchetti per l'italiano
 \usepackage[italian]{babel}
@@ -223,6 +224,35 @@ In questo metodo di indirizzamento, si utilizza sempre un \emph{indirizzo di mem
 
 ~\newline
 \underline{Esempio:} \tabto{3cm} \texttt{MOVL \$4(\%EAX), \%EBX}
+
+\subsection{Microistruzioni}
+Ogni istruzione Assembly viene eseguita in più passi minori. Innanzitutto perché ogni istruzione viene eseguita dalla CPU in tre fasi (\emph{fetch}, \emph{decode}
+ed \emph{execute}) e ognuna di queste fasi corrisponde a un insieme di \textbf{microistruzioni} eseguite internamente dalla CPU.
+
+~\newline
+\underline{Esempio di istruzione:} \tabto{4cm} \texttt{ADDL \%EAX, \%EBX}
+\begin{enumerate}
+    \item Fetch: \texttt{PCout, MARin, READ, SELECT4, ADD, Zin} \newline
+    Il valore in PC viene "lasciato uscire" sul bus e "fatto entrare" in MAR. Viene dato il segnale di READ alla memoria per leggere la prossima istruzione. SELECT4, ADD e Zin permetteranno PC (gli viene aggiunto il valore 4 mediante la ALU)
+    
+    \item Fetch: \texttt{WMFC, Zout, PCin} \newline
+    Viene \emph{messo in pausa} il clock della CPU in attesa che la memoria recuperi il dato e lo scriva sul bus dati. \newline Inoltre il valore della somma precedente viene fatto uscire dalla ALU e salvato in PC (PC è stato quindi incrementato).
+    
+    \item Fetch: \texttt{MDRout, IRin} \newline
+    Il valore dalla memoria è stato scritto sul bus e quindi in MDR. Il dato viene fatto "uscire" da MDR e viene fatto "entrare" in IR. A questo punto l'istruzione da eseguire è stata \emph{caricata} ed è pronta per essere eseguita.
+
+    \item Execute: \texttt{EAXout, Yin} \newline
+    Il valore presente in EAX viene scritto nel registro Y in ingresso alla ALU.
+
+    \item Execute: \texttt{EBXout, SELECTy, ADD, Zin} \newline
+    Il valore in EBX viene fatto "uscire" sul bus e quindi è già leggibile dalla ALU. A questo punto il mux lascia passare il valore di Y nell'altro ingresso della ALU e il segnale ADD fa eseguire la somma tra i due valori. Il risultato viene fatto entrare in Z.
+
+    \item Execute: \texttt{Zout, EBXin, END} \newline
+    Il valore ottenuto dalla somma che si trova in Z viene quindi salvato nel secondo operando, ovvero EBX. Il segnale di END comunica il compimento dell'istruzione.
+\end{enumerate}
+Essendo i valori da sommare già presenti nei registri, ovvero entrambi con \emph{indirizzamento diretto a registro}, la fase di decode non è necessaria: i valori sono già pronti per essere utilizzati dalla ALU.
+
+
 
 
 
