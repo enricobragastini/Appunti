@@ -1,5 +1,5 @@
 # Appunti UniVR
-### Questa sarà una raccolta di appunti del 1° anno del corso di Informatica, UniVR
+### La mia raccolta di appunti in LaTeX
 
-- Autore: Enrico Bragastini
+- Autore: Enrico Bragastini  
 - Data di inizio: 20/03/2021
