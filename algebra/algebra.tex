@@ -310,7 +310,7 @@ La somma di due matrici (con la stessa \emph{forma}) si fa \textbf{posto per pos
     \end{bmatrix}
 \end{equation*}
 
-\subsection{Moltiplicazione per uno scalare}
+\subsection{Prodotto per uno scalare}
 Sia $\alpha \in \mathbb{R}$ uno scalare.
 Consideriamo $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$
 allora $\alpha A$ denota la matrice con la stessa forma di $A$ (ovvero $m \times n$) e con
@@ -330,12 +330,29 @@ termine generico $b_{i,j} = \alpha a_{i,j}$
     \end{bmatrix} \;\; 2 \times 2
 \end{align*}
 
-\noindent Data $A=[a_{i,j}]\;\;\; \begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$, allora ci sono 3 casi particolari:
+\paragraph{Tre situazioni particolari} Data $A=[a_{i,j}]$ \tiny$\begin{aligned} 1&\le i\le m\\ 1&\le j\le n \end{aligned}$ \normalsize, allora:
 \begin{itemize}
     \item $0 \cdot A = O_{m,n}$ (\emph{matrice nulla})
     \item $1 \cdot A = A$
     \item $(-1) \cdot A = -A$ (\emph{matrice inversa})
 \end{itemize}
+
+\subsection{Prodotto tra matrici}
+La moltiplicazione tra matrici, a differenza della somma che opera posto per posto, viene effettuata \textbf{riga per colonna}.
+
+
+\paragraph{Caso base} Prodotto tra un vettore riga e un vettore colonna:
+\begin{equation*}
+    \begin{bmatrix}
+        a_{11} & a_{12} \cdots 1_{1n}
+    \end{bmatrix}
+    \times
+    \begin{bmatrix}
+        b_{11} \\ b_{21} \\ b_{n1}
+    \end{bmatrix}
+    \; = \; a_{11}b_{11} + a_{12}b_{21} + \cdots + a_{1n}b_{n1}
+\end{equation*}
+
 
 
 \end{document}

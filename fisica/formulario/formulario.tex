@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt,landscape]{article}
+\usepackage[
+    margin=1cm
+]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{titlesec}
+
+\title{}
+\author{}
+\date{}
+
+\pagestyle{empty}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+\begin{center}
+    \vspace{1cm}
+    \textbf{\Large Formulario Fisica 1}
+    \vspace{1cm}
+\end{center}
+
+\begin{multicols*}{2}
+    \section*{Moto Rettilineo Uniforme}
+    \begin{itemize}
+        \item $v_x = v_m = \text{costante}$
+        \item $v_x = \frac{\Delta x}{\Delta t}$
+        \item $x_f = x_i + v_x t$
+    \end{itemize}
+
+    \section*{Accelerazione media e istantanea}
+    \begin{itemize}
+        \item $a_m = \frac{\Delta v_x}{\Delta t} = \frac{v_{xf} - v_{xi}}{t_{xf} - f_{xi}}$
+        \item $a_x = \displaystyle\lim_{\Delta t \to 0} \frac{\Delta v_x}{\Delta t} = \frac{dv_x}{dt} = \frac{d^2 x}{dt^2}$
+    \end{itemize}
+
+    \section*{Moto Rettilineo Uniformemente Accelerato}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $a_m = a_x = \text{costanti}$
+            \item $v_{xf} = v_{xi} + a_x t$
+            \item $v_m = \tfrac{1}{2} (v_{xi} + v_{xf})$
+            \item $x_f = x_i + v_{xi}t + \tfrac{1}{2} a_x t^2$
+            \item $v^2_{xf} = v^2_{xi} + 2ax(x_f - x_i)$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Corpi in caduta libera}
+    \begin{itemize}
+        \item $a_y = g = \text{costante}$
+        \item $g = 9.81 m/s^2$
+    \end{itemize}
+
+    \section*{Moto dei Proiettili}
+    \begin{itemize}
+        \item $h_{max} = \frac{v_i^2 \sin^2 \theta_i}{2g}$
+        \item $R \text{(gittata)} = \frac{v_i^2 \sin^2 2\theta_i}{g}$
+    \end{itemize}
+
+    \section*{Moto Circolare Uniforme}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $a_c = \frac{v^2}{r}$
+            \item $T = \frac{2 \pi r}{v}$
+            \item $\omega = \frac{2\pi}{T}$
+            \item $\omega = \frac{v}{r}$
+            \item $v = r\omega$
+            \item $a_c = r\omega^2$ 
+        \end{multicols*}
+    \end{itemize}
+    
+    \section*{Seconda legge di Newton}
+    \begin{itemize}
+        \item $\vec{a} \propto \frac{\sum \vec{F}}{m}$
+        \item $\sum \vec{F} = m\vec{a}$
+        \item $F_g (\text{forza peso}) = mg$
+    \end{itemize}
+
+    \section*{Attrito}
+    \begin{itemize}
+        \item Attrito statico: $f_s \leq \mu_s n$ \newline
+        $\mu_s$ : coefficiente di attrito statico \newline
+        $n$ : reazione vincolare
+        \item Attrito dinamico: $f_k = \mu_k n$ \newline
+        $\mu_s$ : coefficiente di attrito dinamico
+    \end{itemize}
+
+
+\end{multicols*}
+
+\end{document}

@@ -606,7 +606,7 @@ Possiamo utilizzare questa espressione del tempo per calcolare l'altezza massima
 $y_f$ si sostituisce t con l'espressione appena trovata e $y_f$ diventa l'altezza $h_{max}$
 \begin{align*}
     y_f = y_i + v_{yi}t - \tfrac{1}{2}gt^2 \;\; \rightarrow \;\; h_{max} & = 0 + (v_i \sin{\theta_i})\tfrac{v_i \sin{\theta_i}}{g} - \tfrac{1}{2}g(\tfrac{v_i \sin{\theta_i}}{g})^2 \\
-    h_{max}                                                              & = \frac{v_i^2 \sin{\theta_i}}{2g}
+    h_{max}                                                              & = \frac{v_i^2 \sin^2{\theta_i}}{2g}
 \end{align*}
 
 \paragraph{Gittata}
@@ -622,19 +622,21 @@ Poiché vale la relazione $2\sin{\theta_i}\cos{\theta_i} = \sin{2\theta}$, si pu
 
 
 \section{Moto Circolare Uniforme}
-Se il moto circolare è uniforme significa che è costante il vettore velocità angolare, cioè si ha velocità lineare costante in modulo. 
+Il \emph{moto circolare} è uno dei moti semplici studiati dalla fisica e dalla cinematica, e consiste in un moto di un punto materiale lungo una circonferenza. 
+
+Se il \textbf{moto circolare} è \textbf{uniforme} significa che \textbf{è costante il vettore velocità angolare}, cioè si ha \textbf{velocità lineare costante in modulo}. 
 Poiché comune in molte situazioni fisiche, questo tipo di moto viene schematizzato in un modello di analisi, detto \textbf{punto materiale in moto circolare uniforme}.
 
-Il vettore velocità, che è sempre tangente alla traiettoria, è perpendicolare al raggio della traiettoria circolare. Quindi la direzione del vettore velocità cambia continuamente.
+Il \textbf{vettore velocità}, che è sempre \textbf{tangente alla traiettoria}, è \textbf{perpendicolare al raggio} della traiettoria circolare. Quindi la direzione del vettore velocità cambia continuamente.
 
-In un moto circolare uniforme il vettore accelerazione può avere solamente un componente perpendicolare alla traiettoria che è \emph{diretta verso il centro della circonferenza}.
+In un moto circolare uniforme il \textbf{vettore accelerazione} può avere solamente un componente \textbf{perpendicolare alla traiettoria}, ovvero \emph{diretto verso il centro della circonferenza}.
 \begin{figure*}[h]
     \centering
     \includegraphics[scale=0.5]{moto_circolare_uniforme}    
 \end{figure*}
 
 \paragraph{Accelerazione media}
-Partendo dall'equazione $\vec{a}_{media} = \tfrac{\Delta \vec{v}}{\Delta t}$ e conoscendo la relazione tra le lunghezze nei due triangoli delle figure:
+Partendo dall'equazione $\vec{a}_{media} = \tfrac{\Delta \vec{v}}{\Delta t}$ e conoscendo la relazione tra le lunghezze nei due triangoli delle figure
 \begin{equation*}
     \tfrac{\abs{\Delta \vec{v}}}{v} = \tfrac{\abs{\Delta \vec{r}}}{r}
 \end{equation*}
@@ -650,7 +652,7 @@ Questo tipo di accelerazione è chiamata \textbf{accelerazione centripeta}.
 
 \paragraph{Periodo}
 È conveniente descrivere il moto circolare uniforme di un punto materiale su una circonferenza di raggio $r$ usando come parametro il \textbf{periodo $T$}, 
-definito come l’intervallo di tempo necessario perché il punto compia una rivoluzione completa. Nell’intervallo di tempo $T$ il punto percorre la circonferenza 
+definito come l’intervallo di tempo necessario perché il punto compia una \emph{rivoluzione} completa. Nell’intervallo di tempo $T$ il punto percorre la circonferenza 
 di lunghezza $2\pi r$. Ne segue che la velocità costante è uguale alla lunghezza della circonferenza divisa per il periodo, e cioè $v = \tfrac{2\pi r}{T}$ e, da questa:
 \begin{equation*}
     T = \frac{2\pi r}{v}
@@ -669,7 +671,7 @@ punto si muove sulla traiettoria circolare:
 \begin{equation*}
     \omega = 2\pi \left (\frac{v}{2\pi r} \right)  = \frac{v}{r} \;\; \rightarrow \;\; v = r\omega
 \end{equation*}
-Fissata la velocità angolare, la velocità aumenta all'aumentare del raggio.
+Fissata la velocità angolare, \textbf{la velocità aumenta all'aumentare del raggio}.
 
 È possibile esprimere l'accelerazione centripeta in moto circolare uniforme in termini della velocità angolare:
 \begin{align*}
