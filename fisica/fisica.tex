@@ -1267,4 +1267,215 @@ Definiamo quindi l'\textbf{energia meccanica} come:
 Ci si rende subito conto che durante il processo di caduta, in ogni momento, \textbf{l'energia meccanica} rimane la stessa, ovvero si \textbf{conserva}.
 Il risultato si può applicare a tutti i sistemi isolati in cui siano coinvolte solo Forze Conservative.
 
+\subsection{Sistemi con attrito dinamico}
+Lo spostamento che appare nell’espressione del lavoro è lo spostamento del \emph{punto di applicazione della forza}.
+Nella realtà la forza di attrito è distribuita su tutta l’area di contatto del corpo che scivola sulla superficie e non può certo essere localizzata in un punto.
+Il valore delle forze di attrito nei vari punti di contatto cambia continuamente al cambiare delle saldature generate durante il contatto delle due superfici. 
+
+Di fatto lo spostamento del punto di applicazione della forza di attrito non può essere calcolato e, di conseguenza, nemmeno il lavoro della forza di attrito.
+
+Il teorema lavoro-energia cinetica è valido nel caso di una particella puntiforme o di un corpo che possa essere schematizzato come un punto materiale. Però, in presenza di forze di attrito, il lavoro di queste forze non può essere calcolato. In questa situazione la seconda equazione di Newton rimane ancora valida, mentre il teorema lavoro-energia cinetica non è più utilizzabile.
+
+Supponiamo che su un corpo agiscano più forze, compreso l'attrito. La risultante di queste forze rimane costante. Partiamo dalla seconda legge di Newton
+\begin{align*}
+    \left(\sum \vec{F}_x \right) &= ma_x \\
+    \left(\sum \vec{F}_x \right) \Delta x &= (ma_x) \Delta x
+\end{align*}
+Se la risultante rimane costante, allora il corpo è in moto rettilineo uniformemente accelerato:
+\begin{align*}
+    a_x &= \frac{v_f - v_i}{t} & \Delta x &= \tfrac{1}{2}(v_i + v_f)t
+\end{align*}
+\begin{align*}
+    \left(\sum \vec{F}_x \right) \Delta x &= m \left(\frac{v_f - v_i}{t} \right)\tfrac{1}{2}(v_i+v_f)t \\
+    \left(\sum \vec{F}_x \right) \Delta x &= \tfrac{1}{2}mv_f^2 - \tfrac{1}{2} mv_i^2
+\end{align*}
+Se la risultante è costituita solamente dalla forza d'attrito:
+\begin{equation*}
+    \left(\sum \vec{F}_x \right) \Delta x = -f_k \Delta x = \tfrac{1}{2}mv_f^2 - \tfrac{1}{2} mv_i^2 = \Delta K
+\end{equation*}
+
+Consideriamo ora un sistema isolato composto da un libro con una velocità iniziale $v_i>0$ che scorre su un tavolo. L'unica forza che agisce sul libro è la forza di attrito.
+L'energia del sistema è data da:
+\begin{equation*}
+    E_{system} = \Delta K + \Delta E_{int} = 0
+\end{equation*}
+Conoscendo già la variazione dell'energia cinetica del libro:
+\begin{align*}
+    -f_kd + \Delta E_{int} = 0 \\
+    \Delta E_{int} = f_kd
+\end{align*}
+Vediamo quindi che la forza d'attrito \emph{trasforma} l'energia cinetica in energia interna. L'aumento dell'energia interna del sistema è uguale al prodotto della forza d'attrito
+per la distanza totale percorsa dal corpo.
+
+\subsection{Generalizzazione della legge di conservazione dell'energia}
+Supponiamo di avere un \textbf{sistema isolato} in cui possa cambiare sia l'\emph{energia cinetica} che l'\emph{energia potenziale}.
+Essendo il sistema isolato, non c'è variazione di energia:
+\begin{gather*}
+    \Delta E_{system} = 0 \\
+    \Delta U + \Delta K + \Delta E_{int} = 0 \\
+    \Delta U + \Delta K = -\Delta E_{int}
+\end{gather*}
+Conosciamo già il valore della variazione di energia interna: $\Delta E_{int} = f_k d$
+\begin{gather*}
+    \Delta U + \Delta K = -f_k d\\ 
+    \Delta E_{mecc} = -f_k d
+\end{gather*}
+Vediamo quindi che la quantità di energia meccanica ($\Delta E_{mecc} = \Delta U + \Delta K$) persa è dovuta al lavoro della forza d'attrito.
+
+\section{Potenza}
+La potenza è definita come l'energia trasferita per unità di tempo. L’energia trasferita nell’unità di tempo è detta \textbf{potenza istantanea P} ed è definita come:
+\begin{equation*}
+    P \equiv \frac{dE}{dt}
+\end{equation*}
+Se una forza esterna è applicata ad un corpo ed il lavoro compiuto sul corpo da questa forza in un intervallo di tempo $\Delta t$ è $W$, la \textbf{potenza media} in quell'intervallo 
+di tempo è
+\begin{equation*}
+    P_{media} \equiv \frac{W}{\Delta t}
+\end{equation*}
+In modo analogo a quanto già fatto per definire velocità e accelerazione in un istante di tempo, possiamo definire la potenza istantanea come il valore limite della potenza media, al tendere a zero di $\Delta t$:
+\begin{equation*}
+    P = \lim_{\Delta t \to 0} \frac{W}{\Delta t} = \frac{dW}{dt}
+\end{equation*}
+L'unità di misura della Potenza è il Watt: $1W = 1J/s = 1kg \cdot m^2/s^3$
+
+\chapter{Quantità di moto e urti}
+
+\section{Quantità di moto (sistema isolato)}
+Per introdurre questa nuova quantità, consideriamo un sistema isolato composto da due particelle di massa $m_1$ ed $m_2$ che si muovono, ad un certo istante, con velocità $\vec{v}_1$ e $\vec{v}_2$.
+
+Se una forza dovuta alla particella 1 (per esempio, una forza gravitazionale) agisce sulla particella 2, ci deve quindi essere una seconda forza – uguale in modulo ma opposta in verso – che la particella 2 esercita sulla 1.
+In altre parole, queste due forze formano una coppia \emph{azione-reazione} nel senso del \emph{terzo principio di Newton}, e risulta $\vec{F}_{21} = \vec{F}_{12}$. Ovvero possiamo riscrivere l'equazione come
+\begin{equation*}
+    \vec{F}_{21} + \vec{F}_{12} = 0
+\end{equation*}
+Nel caso di un sistema di punti materiali, questa equazione ci dice che la somma delle forze che agiscono su un sistema isolato è \emph{zero}. Possiamo riscrivere l'equazione sostituendo
+la forza con la quantità $m\vec{a}$, ottenendo
+\begin{gather*}
+    m_1\vec{a}_1 + m_2\vec{a}_2 = 0 \\ 
+    m_1 \frac{dv_1}{dt} + m_2 \frac{dv_2}{dt} = 0 \\
+\end{gather*}
+Se le masse $m_1$ ed $m_2$ sono costanti, le possiamo portare dentro l’operatore di derivazione
+\begin{gather*}
+    \frac{d(m_1v_1)}{dt} + \frac{d(m_2v_2)}{dt} = 0 \\ 
+    \tfrac{d}{dt}(m_1v_1 + m_2v_2) = 0
+\end{gather*}
+
+\paragraph{Definizione} Chiamiamo \textbf{quantità di moto} la \textbf{grandezza vettoriale} $m\vec{v}$:
+\begin{equation*}
+    p \equiv m\vec{v}
+\end{equation*}
+L'unità di misura di questa grandezza è $kg \cdot m/s$
+
+~\newline Se la derivata della somma $m_1v_1 + m_2v_2$ è uguale a \emph{zero}, significa che la somma deve rimanere costante.
+Notiamo quindi che la quantità di moto $p = m\vec{v}$, dove $m$ è la massa e $\vec{v}$ la velocità di una particella, soddisfa una proprietà importante: la somma di tutte le quantità di moto per un sistema isolato \textbf{si conserva}.
+
+Ogni qualvolta due o più particelle di un sistema fisico isolato interagiscono, la quantità di moto totale del sistema rimane costante:
+\begin{equation*}
+    p_{tot} = p_1 + p_2 + \dotsb + p_{n} = constant
+\end{equation*}
+
+\paragraph{Seconda legge di Newton} È possibile esprimere la seconda legge della Dinamica in termini della quantità di moto. 
+La seconda legge di Newton ci dice che la forza risultante applicata a un corpo è data dalla sua massa per l'accelerazione.
+\begin{equation*}
+    \sum \vec{F} = ma = m \frac{dv}{dt}
+\end{equation*}
+Essendo la massa costante, la possiamo portare all'interno dell'operatore di derivazione:
+\begin{equation*}
+    \sum \vec{F} = \frac{d(m\vec{v})}{dt} = \frac{d\vec{p}}{dt}
+\end{equation*}
+Vediamo quindi che la variazione della quantità di moto di un corpo non è altro che la forza risultante che agisce sullo stesso.
+
+\section{Quantità di moto (sistema non isolato)}
+Da un punto di vista energetico, un sistema non è isolato se c’è un flusso di energia attraverso i confini del sistema. Per quanto riguarda la conservazione della quantità di moto, un sistema è non isolato se la risultante delle forze esterne agenti sul sistema in un dato intervallo di tempo non è nulla. 
+In tale situazione, possiamo immaginare che della quantità di moto venga trasferita al sistema proprio dalla risultante delle forze esterne.
+
+Per iniziare ad approfondire questo importante concetto, facciamo l’ipotesi che una risultante delle forze $\sum \vec{F}$ agisca su un punto materiale e che tale forza possa variare nel tempo in accordo con la seconda legge di Newton.
+\begin{align*}
+    \sum \vec{F} &= \tfrac{d\vec{p}}{dt} & d\vec{p} &= \sum\vec{F} \; dt
+\end{align*}
+Integrando questa espressione nell’intervallo di tempo in cui agisce la forza, si ottiene la variazione di quantità di moto del punto materiale.
+Se la quantità di moto del punto materiale cambia da $\vec{p}_i$ all’istante $t_i$ a $\vec{p}_f$ all’istante $t_f$, l'integrazione dell'equazione dà:
+\begin{equation*}
+    \Delta \vec{p} = \vec{p}_f - \vec{p}_i = \int_{t_i}^{t_f} \sum \vec{F} \; dt
+\end{equation*}
+
+\paragraph{Impulso} La quantità a secondo membro di questa equazione è chiamata impulso della risultante $\sum \vec{F}$	agente sul punto materiale nell’intervallo di tempo $\Delta t$:
+\begin{align*}
+    \vec{I} &= \int_{t_i}^{t_f} \sum \vec{F} \; dt & \Delta \vec{p} &= \vec{I}
+\end{align*}
+
+\section{Urti in una dimensione}
+\paragraph{Definizione} L'\textbf{urto} è il termine fisico con il quale si identifica la collisione di due corpi che si scontrano. 
+Due corpi interagiscono scambiandosi forze molto intense per intervalli di tempo molto piccoli. Si parla quindi di \textbf{approssimazione impulsiva}, intendendo che le forze 
+che agiscono in questi brevi intervalli di tempo siano molto più intense di tutte le forze esterne presenti, permettendoci di trascurarle.
+
+Tenendo solamente conto delle forze interne, possiamo rifarci al modello di sistema isolato in cui la \textbf{quantità di moto si conserva}.
+
+\subsection{Urti anelastici}
+Un \textbf{urto anelastico} è un urto in cui le energie cinetiche totali del sistema prima e dopo l’urto sono diverse (anche se la quantità di moto del sistema è conservata).
+Gli urti anelastici sono di \emph{due tipi}:
+\begin{enumerate}
+    \item \textbf{Urti perfettamente anelastici}: Quando due oggetti si urtano e rimangono uniti l’uno all’altro (es. meteorite che colpisce la terra)
+    \item \textbf{Urti anelastici}: Quando gli oggetti che si urtano non rimangono uniti, ma si ha ugualmente dissipazione di energia cinetica (es. una palla di gomma colpisce una superficie dura)
+\end{enumerate}
+
+
+Consideriamo un caso di \textbf{urto perfettamente anelastico}. Due punti materiali di massa $m_1$ ed $m_2$ che si muovono con velocità iniziali $\vec{v}_{1i}$ e $\vec{v}_{1i}$ lungo una retta.
+I due punti materiali si urtano centralmente, rimangono uniti e si muovono, dopo l’urto, con una velocità comune $\vec{v}_f$. 
+
+\begin{figure}[h]
+    \includegraphics[scale=0.4]{urto_perfettamente_anelastico.png}
+    \centering
+\end{figure}
+\noindent La quantità di moto rimane invariata prima e dopo l'urto:
+\begin{equation*}
+    \Delta \vec{p} = 0 \;\; \rightarrow \;\; \vec{p}_i = \vec{p}_f \;\; \rightarrow \;\; m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = (m_1 + m_2) \vec{v}_f
+\end{equation*}
+La velocità finale quindi equivale a
+\begin{equation*}
+    \vec{v}_f = \frac{m_1\vec{v}_{1i} + m_2\vec{v}_{2i}}{m_1 + m_2}
+\end{equation*}
+
+\subsection{Urti elastici}
+Un \textbf{urto elastico} tra due oggetti è un urto in cui l’energia cinetica totale del sistema è uguale prima e dopo l’urto (così come la quantità di moto totale).
+Alcuni tipi di urti che avvengono nella realtà che quotidianamente ci circonda sono elastici solo \emph{approssimativamente}, esiste sempre una dissipazione di energia cinetica.
+
+Gli unici urti che sono realmente elastici sono quelli che avvengono tra \emph{particelle subatomiche}. Tali urti possono essere descritti usando il modello sistema isolato sia per l’energia che per la quantità di moto. Infatti, in essi non vi è alcuna trasformazione di energia cinetica in altre forme di energia all’interno del sistema.
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{urto_elastico.png}
+\end{wrapfigure}
+Consideriamo ora due punti materiali di massa $m_1$ ed $m_2$ che si muovono in linea retta con velocità iniziali date da $\vec{v}_{1i}$ e da $\vec{v}_{2i}$, come mostrato in figura
+
+I due punti materiali urtano centralmente e dopo si allontanano dalla zona di interazione con velocità differenti, che indicheremo con $\vec{v}_{1f}$ e $\vec{v}_{2f}$.
+Se la collisione è di tipo elastica, sia la quantità di moto che l'energia cinetica del sistema si devono conservare.
+Quindi, assumendo che le velocità siano dirette lungo l’asse orizzontale abbiamo:
+\begin{align*}
+    \vec{p}_i = \vec{p}_f \;\; &\rightarrow \;\; m_1v_{1i} +  m_2v_{2i} = m_1v_{1f} +  m_2v_{2f} \\
+    K_i = K_f \;\; &\rightarrow \;\;\tfrac{1}{2} m_1v_{1i}^2 + \tfrac{1}{2} m_2v_{2i}^2 = \tfrac{1}{2} m_1v_{1f}^2 + \tfrac{1}{2} m_2v_{2f}^2
+\end{align*}
+Riscriviamo l'equazione della conservazione dell'energia cinetica e scomponiamo i membri dell'equazione:
+\begin{align*}
+    m_1(v_{1i}^2 - v_{1f}^2) &= m_2(v_{2f}^2 - v_{2i}^2) \\
+    m_1(v_{1i} - v_{1f})(v_{1i} + v_{1f}) &= m_2(v_{2f} - v_{2i})(v_{2f} + v_{2i})
+\end{align*}
+Separiamo ora i termini dell'equaziione della conservazione della quantità di moto:
+\begin{equation*}
+    m_1(v_{1i} - v_{1f}) = m_2(v_{2f} - v_{2i})
+\end{equation*}
+Dividendo quindi l'equazione dell'energia cinetica per l'equazione della quantità di moto:
+\begin{align*}
+    v_{1i} + v_{1f} &= v_{2f} + v_{2i} \\ 
+    v_{1i} - v_{2i} &= -(v_{1f} - v_{2f})
+\end{align*}
+Vediamo quindi che la velocità relativa prima dell'urto, $v_{1i} - v_{2i}$, è uguale e di segno opposto alla velocità relativa dopo l'urto, $-(v_{1f} - v_{2f})$.
+
+Si supponga che le masse e le velocità iniziali delle due particelle siano note. Le precedenti equazioni possono essere risolte per calcolare le velocità finali in funzione delle velocità iniziali,
+poiché si hanno due equazioni e due incognite. Il risultato è:
+\begin{align*}
+    v_{1f} &= \left( \frac{m_1 - m_2}{m_1 + m_2} \right) v_{1i} + \left( \frac{2m_2}{m_1 + m_2} \right) v_{2i} \\
+    v_{2f} &= \left( \frac{2m_1}{m_1 + m_2} \right) v_{1i} + \left( \frac{m_2 - m_1}{m_1 + m_2} \right) v_{2i}
+\end{align*}
+
 \end{document}
