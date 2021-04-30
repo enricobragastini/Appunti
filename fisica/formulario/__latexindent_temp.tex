@@ -1,6 +1,6 @@
 \documentclass[a4paper,14pt,landscape]{extarticle}
 \usepackage[
-    margin=0.5cm
+    margin=1cm
 ]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -14,7 +14,7 @@
 \date{}
 
 \pagestyle{empty}
-\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 
 \begin{document}
@@ -89,20 +89,24 @@
               $\mu_s$ : coefficiente di attrito dinamico
     \end{itemize}
 
+    \newpage
+
     \section*{Lavoro}
     \begin{itemize}
-        \item $W \equiv F \Delta r \cos{\theta} = \int_{x_i}^{x_f} F_x \; dx = \vec{F} \cdot \Delta \vec{r}$
+        \item Lavoro: $W \equiv F \Delta r \cos{\theta}$
+        \item Lavoro forza variabile: $W= \int_{x_i}^{x_f} F_x \; dx$
     \end{itemize}
 
     \section*{Prodotto scalare}
     \begin{itemize}
-        \item $\vec{A} \cdot \vec{B} = AB\cos{\theta} = A_xB_x + A_yB_y + A_zB_z$
+        \item $\vec{A} \cdot \vec{B} = AB\cos{\theta}$
+        \item $W = F \Delta r \cos{\theta} = \vec{F} \cdot \Delta \vec{r}$
     \end{itemize}
 
     \section*{Lavoro di una molla}
     \begin{itemize}
         \item Legge di Hooke: $F_s = -kx$
-        \item $W_s = \int_{x_i}^{x_f} (-kx) \; dx = \tfrac{1}{2}kx_i^2 - \tfrac{1}{2}kx_f^2$
+        \item $W_s = \int_{x_i}^{x_f} F_s \; dx = \tfrac{1}{2}kx_i^2 + \tfrac{1}{2}kx_f^2$
     \end{itemize}
 
     \section*{Energia cinetica}
@@ -110,9 +114,7 @@
         \begin{multicols*}{3}
             \item $K \equiv \tfrac{1}{2} mv^2$
             \item $W = \Delta K$
-            \item $K_f = K_i + W_{est}$
         \end{multicols*}
-        \item $v = \sqrt{\tfrac{2K}{m}}$
     \end{itemize}
 
     \section*{Energia potenziale}
@@ -126,23 +128,13 @@
     \section*{Conservazione dell'energia}
     \begin{itemize}
         \item $\Delta E_{sistema} = \sum T$
-        \item $K_f + U_f = K_i + U_i$ (attenzione all'attrito!)
-    \end{itemize}
-
-    \section*{Sistemi con attrito dinamico}
-    \begin{itemize}
-        \begin{multicols*}{2}
-            \item $\Delta K = -f_kd$
-            \item $U_f + K_f - U_i - K_i = -f_kd$
-        \end{multicols*}
+        \item $\Delta K + \Delta U + \Delta E_{int} = W + Q + T_{OM} + T_{M} + T_{E}+ T_{EM}$
     \end{itemize}
 
     \section*{Energia meccanica}
     \begin{itemize}
-        \begin{multicols*}{2}
-            \item $E_{mecc} = K + U$
-            \item $E_{mecc_f} = E_{mecc_i}$
-        \end{multicols*}
+        \item $E_{mecc} = K + U$
+        \item Si conserva: $E_{mecc_f} = E_{mecc_i}$
     \end{itemize}
 
     \section*{Potenza}
@@ -150,7 +142,7 @@
         \begin{multicols*}{3}
             \item $P \equiv \tfrac{dE}{dt}$
             \item $P_{media} \equiv \tfrac{W}{\Delta t}$
-            \item $P_{ist} = \tfrac{dW}{dt} = \vec{F} \cdot \vec{v}$
+            \item $P_{ist} = \tfrac{dW}{dt}$
         \end{multicols*}
     \end{itemize}
 
@@ -158,16 +150,18 @@
     \begin{itemize}
         \begin{multicols*}{2}
             \item $p \equiv m\vec{v}$
-            \item $\sum \vec{F} = m\vec{a} = m \tfrac{d\vec{v}}{dt} = \tfrac{d\vec{p}}{dt}$
+            \item $\sum \vec{F} = \tfrac{d\vec{p}}{dt}$
             \item $\Delta \vec{p} = \int_{t_i}^{t_f} \sum\vec{F} \; dt$
-            \item Impulso: $\Delta \vec{p} = \vec{I} \;\; [N\cdot s]$          
+            \item Impulso: $\Delta \vec{p} = \vec{I}$            
         \end{multicols*}
     \end{itemize}
 
-    \section*{Urti perfettamente anelastici}
+    \section*{Urti anelastici}
     \begin{itemize}
-        \item $\Delta \vec{p} = 0 \;\; \rightarrow \;\; m_1\vec{v}_1 + m_2\vec{v}_2 = (m_1+m_2)\vec{v}_f$
-        \item $\vec{v}_f = \tfrac{m_1\vec{v}_{1i} + m_2\vec{v}_{2i}}{m_1 + m_2}$
+        \begin{multicols*}{2}
+            \item $\Delta \vec{p} = 0$
+            \item $\vec{v}_f = \tfrac{m_1\vec{v}_{1i} + m_2\vec{v}_{2i}}{m_1 + m_2}$
+        \end{multicols*}
     \end{itemize}
 
     \section*{Urti elastici}
@@ -179,15 +173,9 @@
 
     \section*{Centro di massa}
     \begin{itemize}
-        \item $x_{CM} \equiv \tfrac{m_1x_1 + \cdots + m_nx_n}{m_1 + \cdots + m_n}$
-        \begin{multicols*}{2}            
-            \item $\vec{v}_{CM} = \tfrac{1}{M} \sum_i m_i\vec{v}_i$
-            \item $\vec{a}_{CM} = \tfrac{1}{M} \sum_i m_i\vec{a}_i$
-        \end{multicols*}
-        \item $x_{CM} = \tfrac{1}{M}\sum_i m_ix_i$ (analogo per y e z)
-        \item $\vec{r}_{CM} = x_{CM}\hat{i} + y_{CM}\hat{j} + z_{CM}\hat{k} = \tfrac{1}{M} \sum_i m_i \vec{r}_i$
-        \item Corpo esteso: $x_{CM} = \tfrac{1}{M} \int x \; dm$ (analogo per y e z)
-        \item Corpo esteso: $\vec{r}_{CM} = \frac{1}{M} \int \vec{r} \; dm$
+        \item $x_{CM} \equiv \frac{m_1x_1 + m_2x_2}{m_1 + m_2}$
+        \item $x_{CM} = \frac{1}{M}\sum_i m_ix_i$ (uguale per y e z)
+        \item $\vec{r}_{CM} = x_{CM}\hat{i} + y_{CM}\hat{j} + z_{CM}\hat{k} = \frac{1}{M} \sum_i m_i \vec{r}_i$
     \end{itemize}
 
 \end{multicols*}

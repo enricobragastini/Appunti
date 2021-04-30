@@ -993,7 +993,7 @@ dove la \textbf{costante di tempo} $\tau = \tfrac{m}{b}$ corrisponde all’inter
 
 \section{Energia di un sistema}
 \subsection{Lavoro compiuto da una forza costante}
-In fisica, il \textbf{lavoro} è l'\emph{energia scambiata tra due sistemi} quando avviene uno spostamento attraverso l'\emph{azione di una forza}, o una risultante di forze, che ha una componente non nulla nella direzione dello spostamento. 
+In fisica, il \textbf{lavoro} è l'\emph{\underline{energia} scambiata tra due sistemi} quando avviene uno spostamento attraverso l'\emph{azione di una forza}, o una risultante di forze, che ha una componente non nulla nella direzione dello spostamento. 
 Pertanto, ha le dimensioni di una forza applicata lungo una determinata distanza. 
 
 Il lavoro W compiuto su un sistema da un agente che esercita su di esso una forza costante è uguale al prodotto tra il \textbf{modulo $F$ della forza}, 
@@ -1056,7 +1056,7 @@ Se una forza risultante variabile in modulo e direzione agisce sul corpo:
 
 \subsection{Lavoro compiuto da una molla}
 Lo schema di un sistema fisico molto comune nel quale la forza varia in funzione della posizione è mostrato in Figura. Il sistema è un blocco che giace su una superficie orizzontale senza attrito, collegato ad una molla.
-se la molla viene allungata o compressa di un piccolo tratto rispetto alla sua lunghezza di riposo (equilibrio), essa esercita sul blocco una forza che matematicamente può essere espressa nella forma
+Se la molla viene allungata o compressa di un piccolo tratto rispetto alla sua lunghezza di riposo (equilibrio), essa esercita sul blocco una forza che matematicamente può essere espressa nella forma
 \begin{align*}
     F_s &= -kx & &\text{\textbf{Legge di Hooke}} 
 \end{align*}
@@ -1460,7 +1460,7 @@ Riscriviamo l'equazione della conservazione dell'energia cinetica e scomponiamo 
     m_1(v_{1i}^2 - v_{1f}^2) &= m_2(v_{2f}^2 - v_{2i}^2) \\
     m_1(v_{1i} - v_{1f})(v_{1i} + v_{1f}) &= m_2(v_{2f} - v_{2i})(v_{2f} + v_{2i})
 \end{align*}
-Separiamo ora i termini dell'equaziione della conservazione della quantità di moto:
+Separiamo ora i termini dell'equazione della conservazione della quantità di moto:
 \begin{equation*}
     m_1(v_{1i} - v_{1f}) = m_2(v_{2f} - v_{2i})
 \end{equation*}
@@ -1477,5 +1477,104 @@ poiché si hanno due equazioni e due incognite. Il risultato è:
     v_{1f} &= \left( \frac{m_1 - m_2}{m_1 + m_2} \right) v_{1i} + \left( \frac{2m_2}{m_1 + m_2} \right) v_{2i} \\
     v_{2f} &= \left( \frac{2m_1}{m_1 + m_2} \right) v_{1i} + \left( \frac{m_2 - m_1}{m_1 + m_2} \right) v_{2i}
 \end{align*}
+
+\section{Centro di massa}
+Descriveremo ora il moto complessivo di un sistema meccanico in termini del moto di un particolare punto, detto \textbf{centro di massa (CM)} del sistema.
+Il sistema meccanico può essere costituito sia da un insieme di punti materiali, sia da un corpo continuo.
+
+Vedremo che il centro di massa è un punto materiale che si muove come se tutta la massa del sistema fosse in esso concentrata. Il sistema si muove quindi come se la risultante delle forze esterne fosse applicata ad un singolo punto materiale posto nel centro di massa.
+
+Si consideri ora un sistema composto da due particelle di massa $m_1$ e $m_2$ disposte lungo l'asse delle $x$.
+\begin{figure}[h]
+    \includegraphics[scale=1]{centro_di_massa_asse_x.png}
+    \centering
+\end{figure}
+Il \textbf{centro di massa} della coppia di punti materiali si troverà sempre sull'asse delle $x$ in un punto intermedio fra le due particelle. La sua coordinata è definita dalla relazione:
+\begin{equation*}
+    x_{CM} \equiv \frac{m_1x_1 + m_2x_2}{m_1 + m_2}
+\end{equation*}
+
+~\newline La definizione può essere estesa a $n$ punti materiali:
+\begin{equation*}
+    x_{CM} \equiv \frac{m_1x_1 + m_2x_2 + \cdots + m_nx_n}{m_1 + m_2 + \cdots + m_n} = \frac{\sum_i m_ix_i}{\sum_i m_i} = \frac{\sum_i m_ix_i}{M} = \frac{1}{M}\sum_i m_ix_i
+\end{equation*}
+
+~\newline Nel caso più generale, ovvero quello in cui $n$ particelle sono distribuite nello spazio tridimensionale, le coordinate $y$ e $z$ sono definite come:
+\begin{align*}
+    y_{CM} &\equiv \frac{1}{M} \sum_i m_iy_i & z_{CM} &\equiv \frac{1}{M} \sum_i m_iz_i
+\end{align*}
+dove M è la massa totale del sistema.
+
+~\newline La posizione del centro di massa può anche essere individuata tramite il suo vettore posizione $\vec{r}_{CM}$. Si ha quindi 
+\begin{equation*}
+    \vec{r}_{CM} = x_{CM}\hat{i} + y_{CM}\hat{j} + z_{CM}\hat{k}
+\end{equation*}
+ovvero
+\begin{equation*}
+    \vec{r}_{CM} \equiv \frac{1}{M} \sum_i m_i \vec{r}_i
+\end{equation*}
+dove $\vec{r}_i$ è il vettore posizione della i-esima particella, definito da 
+\begin{equation*}
+    \vec{r}_i \equiv x_i \hat{i} + y_i \hat{j} + x_i \hat{k}
+\end{equation*}
+
+Un \textbf{corpo esteso generico} può essere pensato come un sistema composto da un gran numero di elementi infinitesimi di massa.
+Poiché le distanze tra i suddetti elementi sono infinitesime, la distribuzione di massa del corpo può essere considerata come continua.
+Dividendo il corpo esteso in elementi di massa $\Delta m_i$, con coordinate $x_i$, $y_i$, $z_i$, si vede che la coordinata $x_{CM}$ del centro di massa è approssimativamente:
+\begin{equation*}
+    x_{CM} \approx \frac{1}{M} \sum_i x_i \Delta m_i
+\end{equation*}
+con simili espressioni per le cordinate $y$ e $z$. Se facciamo tendere ad infinito il numero $n$ degli elementi di massa $\Delta m_i$, facendo decrescere simultaneamente $\Delta m$, il valore di $x_{CM}$ sarà esatto. Con questa operazione di 
+passaggio al limite si passa dalla somma all’integrale, sostituendo agli elementi di massa $\Delta m_i$ l’elemento differenziale di massa $dm$ e si ottiene quindi
+\begin{equation*}
+    x_{CM} = \lim_{\Delta m_i \to 0} \frac{1}{M} \sum_i x_i \Delta m_i = \frac{1}{M} \int x \; dm
+\end{equation*}
+e in maniera del tutto analoga per $y$ e $z$:
+\begin{align*}
+    y_{CM} &= \frac{1}{M} \int y \; dm & z_{CM} &= \frac{1}{M} \int z \; dm
+\end{align*}
+
+~\newline Il vettore posizione del centro di massa di un corpo rigido $\vec{r}_{CM}$ può quindi essere scritto come:
+\begin{equation*}
+    \vec{r}_{CM} = \frac{1}{M} \int \vec{r} \; dm
+\end{equation*}
+
+Poiché un corpo esteso è una distribuzione continua di massa, su ognuna delle sue masse infinitesime costituenti agirà la forza di gravità. La risultante di tutte le forze di gravità che agiscono sul corpo 
+rigido è equivalente ad una singola forza $M \vec{g}$ applicata in un punto speciale chiamato \textbf{baricentro} (o \textbf{centro di gravità}). 
+Se $\vec{g}$ è uguale in tutti i punti del corpo, allora il baricentro coincide con il centro di massa. Se un corpo è appeso per il suo baricentro, è in equilibrio qualunque sia il suo orientamento.
+
+\section{Moto di un sistema di punti materiali}
+Si consideri il centro di massa di un sistema formato da due o più punti materiali. È possibile far luce sul suo significato fisico e sulla sua utilità calcolando la derivata
+rispetto al tempo del suo vettore posizione. La derivata temporale di un vettore posizione è, per definizione, il vettore velocità. Supponendo per ipotesi che M sia costante,
+otteniamo la seguente espressione per la \textbf{velocità del centro di massa}:
+\begin{equation*}
+    \vec{v}_{CM} = \frac{d\vec{r}_{CM}}{dt} =   \frac{1}{M} \sum_i m_i \frac{d\vec{r}_i}{dt} = \frac{1}{M} \sum_i m_i \vec{v}_i
+\end{equation*}
+dove $\vec{v}_i$ è la velocità dell'i-esimo punto materiale. L'equazione può essere anche riscritta nella forma:
+\begin{equation*}
+    M\vec{v}_{CM} = \sum m_i \vec{v}_i = \sum \vec{p}_i = \vec{p}_{tot}
+\end{equation*}
+Possiamo quindi concludere che la quantità di moto totale del sistema è uguale alla massa totale moltiplicata per la velocità del centro di massa. In altre parole, 
+la quantità di moto totale del sistema è uguale a quella di un singolo punto materiale di massa $M$ che si muove con la velocità $\vec{v}_{CM}$.
+
+Derivando l'equazione della velocità del centro di massa rispetto al tempo otteniamo l'\textbf{accelerazione del centro di massa}:
+\begin{equation*}
+    \vec{a}_{CM} = \frac{d\vec{v}_{CM}}{dt} = \frac{1}{M} \sum_i m_i \frac{d\vec{v}_i}{dt} = \frac{1}{M} \sum_i m_i \vec{a}_i
+\end{equation*}
+che può essere riscritta utilizzando la legge di Newton:
+\begin{equation*}
+    M\vec{a}_{CM} = \sum_i m_i \vec{a}_i = \sum_i \vec{F}_i
+\end{equation*}
+dove $\vec{F}_i$ è la risultante delle forze agenti sull’i-esimo corpo.
+
+Le forze F → i su ciascun punto materiale del sistema includono sia le \emph{forze esterne} (azioni dall’esterno del sistema) che le \emph{forze interne} (interazioni fra le particelle del sistema).
+Ma, in base alla terza legge di Newton, la forza interna esercitata, per esempio, dalla particella 1 sulla particella 2, è esattamente uguale e contraria a quella esercitata dalla particella 2 sulla 1.
+Quindi, quando sommiamo tutte le forze interne, esse si elidono a coppie. La forza risultante è quindi dovuta solamente alle forze esterne. Possiamo quindi riscrivere l'equazione nella forma:
+\begin{equation*}
+    \sum F_{est} = M\vec{a}_{CM}
+\end{equation*}
+
+
+
 
 \end{document}
