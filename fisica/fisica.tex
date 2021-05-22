@@ -1574,7 +1574,148 @@ Quindi, quando sommiamo tutte le forze interne, esse si elidono a coppie. La for
     \sum F_{est} = M\vec{a}_{CM}
 \end{equation*}
 
+\chapter{Rotazione del corpo rigido}
 
+\section{Posizione, velocità e accelerazione angolari}
+Immaginiamo di analizzare il movimento di un CD simile a quello in figura.
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{cd_rotazione_corpo_rigido.png}
+\end{wrapfigure}
+Il disco ruota attorno ad un \textbf{asse fisso perpendicolare} 
+al piano della figura e passante per il \textbf{centro $O$} del disco stesso. 
+
+Un elemento infinitesimo del disco, schematizzabile come un punto 
+materiale localizzato nel \textbf{punto $P$}, si trova ad una certa \textbf{distanza $r$ dall’origine} e ruota intorno ad essa percorrendo un traiettoria 
+circolare di \textbf{raggio $r$}.
+
+Rappresentiamo la posizione del punto P in termini delle sue \textbf{coordinate polari} $(r, \theta)$. Durante la rotazione, il raggio $r$ rimane costante, mentre
+l'angolo $\theta$ varia nel tempo.
+
+Quando il punto materiale si muove lungo la circonferenza da un punto sulla retta di riferimento $(\theta = 0)$ al punto $P$, percorre un arco di lunghezza $s$ come mostrato in figura.
+Tale arco è legato all'angolo $\theta$ dalla relazione
+\begin{align*}
+    s &= r \theta \\
+    \theta &= \frac{s}{r}
+\end{align*}
+L'angolo $\theta$ è un \textbf{numero puro} e la sua unità di misura sono i \textbf{radianti}.
+
+\paragraph{Posizione angolare}
+Scegliamo un raggio vettore condotto dall’origine $O$ ad un punto arbitrariamente scelto del disco.
+La \textbf{posizione angolare} del corpo rigido viene quindi definita come l’angolo $\theta$ tra tale raggio vettore e la retta di riferimento, spesso scelta come \emph{asse x}.
+
+\paragraph{Spostamento angolare}
+Quando un punto materiale del corpo rigido si muove da \emph{A} a \emph{B} in un intervallo di tempo $\Delta t$, il raggio vettore spazza un angolo $\Delta \theta$.
+Questa quantità viene definita lo \textbf{spostamento angolare} del corpo:
+\begin{equation*}
+    \Delta \theta = \theta_f - \theta_i
+\end{equation*}
+
+\paragraph{Velocità angolare}
+La rapidità con cui avviene la rotazione può essere quantificata introducendo la \textbf{velocità angolare media} $\omega_{media}$ definita come il rapporto tra 
+lo spostamento angolare $\Delta \theta$ e l'intervallo di tempo $\Delta t$ impiegato
+\begin{equation*}
+    \omega_{media} \equiv \frac{\theta_f - \theta_i}{t_f - t_i} = \frac{\Delta \theta}{\Delta t}
+\end{equation*}
+La \textbf{velocità angolare istantanea} è analogamente definita come il limite per $\Delta t \to 0$ della velocità angolare media:
+\begin{equation*}
+    \omega \equiv \lim_{\Delta t \to 0} \frac{\Delta \omega}{\Delta t} = \frac{d\omega}{dt}
+\end{equation*}
+La velocità angolare si misura in $rad/s$, o meglio in secondi$^{-1}$ ($s^{-1}$) essendo il radiante adimensionale.
+
+La velocità angolare è positiva se l'angolo $\theta$ aumenta, ovvero quando il moto è in senso antiorario. Se l'angolo $\theta$ diminuisce, quindi il moto è
+in senso antiorario, allora la velocità angolare sarà negativa.
+
+\paragraph{Accelerazione angolare}
+L’\textbf{accelerazione angolare media} $\alpha_{media}$ di un corpo in rotazione è il rapporto fra la variazione della velocità angolare e l’intervallo di tempo $\delta t$, in cui avviene tale variazione:
+\begin{equation*}
+    \alpha_{media} \equiv \frac{\omega_f - \omega_i}{t_f - t_i} = \frac{\Delta \omega}{\Delta t}
+\end{equation*}
+Analogamente, l'\textbf{accelerazione angolare istantanea} è il limite per $\Delta t \to 0$ dell'accelerazione angolare media:
+\begin{equation*}
+    \alpha \equiv \lim_{\Delta t \to 0} \frac{\Delta \omega}{\Delta t} = \frac{d\omega}{dt}
+\end{equation*}
+L’accelerazione angolare si misura in radianti per secondo al quadrato ($rad/s^{2}$), oppure in secondi$^{-2}$ ($s^{-2}$).
+
+Si noti che alpha è positiva quando un corpo rigido che sta compiendo una rotazione antioraria ruota più rapidamente o, equivalentemente, quando un corpo rigido che sta compiendo una rotazione oraria ruota meno rapidamente.
+
+Nel caso delle rotazioni intorno ad un asse fisso, tutti i punti materiali di un corpo rigido ruotano dello \textbf{stesso angolo} in un dato intervallo di tempo e quindi hanno la \textbf{stessa} \textbf{velocità angolare} e la \textbf{stessa accelerazione angolare}. 
+Ciò significa che le grandezze $\theta$, $\omega$ ed $\alpha$ caratterizzano il moto rotatorio di tutto il corpo rigido così come quello di ogni sua parte.
+
+\subsection{Corpo rigido con accelerazione costante}
+Come nel caso del punto materiale abbiamo introdotto il modello di analisi punto materiale con accelerazione costante, ora introduciamo un nuovo 
+modello di analisi chiamato \textbf{corpo rigido in moto con accelerazione angolare costante}.
+Le leggi cinematiche che si applicano a tale modello, sono del tutto analoghe a quelle del moto rettilineo uniformemente accelerato:
+\begin{align*}
+    \omega_f &= \omega_i + \alpha t \\
+    \theta_f &= \theta_i + \omega_i t + \tfrac{1}{2} \alpha t^2 \\ 
+    \omega_f^2 &= \omega_i^2 + 2\alpha (\theta_f - \theta_i) \\
+    \theta_f &= \theta_i + \tfrac{1}{2}(\omega_i + \omega_f) t
+\end{align*}
+
+\subsection{Variabili angolari e variabili linerari}
+Vediamo ora le \textbf{relazioni} che legano la velocità angolare e l'accelerazione angolare di un corpo rigido in rotazione rispettivamente
+alla velocità e all'accelerazione di un suo qualunque punto.
+\begin{equation*}
+    \text{Velocità tangenziale: } v_t = r\omega
+\end{equation*}
+\begin{equation*}
+    \text{Accelerazione tangenziale: } a_t = r\alpha
+\end{equation*}
+\begin{equation*}
+    \text{Accelerazione centripeta: } a_c = \tfrac{v^2}{r} = r\omega^2
+\end{equation*}
+L'accelerazione del punto sarà quindi uguale a
+\begin{equation*}
+    a = \sqrt{a_t^2 + a_c^2} = \sqrt{r^2\alpha^2 + r^2\omega^4} = r\sqrt{\alpha^2 + \omega^4}
+\end{equation*}
+
+\section{Momento di una forza}
+Valutiamo il sistema rappresentato in figura, in cui una chiave inglese viene usata per serrare il dado; dado e chiave possono ruotare intorno ad un asse, 
+perpendicolare al piano della figura.
+\begin{figure}[h]
+    \includegraphics[scale=0.4]{momento_forza.png}
+    \centering
+\end{figure}
+
+In generale, la forza $\vec{F}$ forma un angolo $\phi$ con la chiave. Definiamo il modulo del momento della forza $\vec{F}$ attorno all’asse passante per $O$ tramite la relazione
+\begin{equation*}
+    \tau \equiv r F \sin{\phi} = F d
+\end{equation*}
+dove $r$ rappresenta la distanza fra l’asse di rotazione ed il punto di applicazione della forza $\vec{F}$ e $d$ è la distanza fra l’asse di rotazione e la retta di azione della forza $\vec{F}$.
+
+È facilmente ricavabile che 
+\begin{equation*}
+    d = r sin \phi
+\end{equation*}
+Questa grandezza viene chiamata \textbf{braccio} della forza $\vec{F}$.
+
+Si noti che $\tau$ è massimo per un angolo $\phi$ di 90°, cioè quando la forza $\vec{F}$ è applicata perpendicolarmente a $r$. Quando invece la forza viene applicata
+parallelamente a $r$, il momento è nullo.
+
+Convenzione sul segno del momento:
+\begin{itemize}
+    \item Il momento della forza è positivo se la forza tende a far ruotare il corpo in senso antiorario
+    \item Il momento della forza è positivo se la forza tende a far ruotare il corpo in senso orario
+\end{itemize}
+
+\subsection{Prodotto vettoriale}
+Dati due vettori $\vec{A}$ e $\vec{B}$ si definisce il prodotto vettoriale tra $\vec{A}$ e $\vec{B}$ con il vettore $\vec{C}$ così definito:
+\begin{align*}
+    C &= A \times B \\
+    C &\equiv AB \sin{\theta}
+\end{align*}
+la direzione del vettore C è perpendicolare al piano individuato da A e B. Per il segno si utilizza la regola della mano destra: le dita parallele al vettore A vanno chiuse verso il vettore B; il pollice indicherà il verso.
+
+Alcune proprietà del prodotto vettoriale:
+\begin{itemize}
+    \item Il prodotto vettoriale non è commutativo: $A \times B = -B \times A$
+    \item Se $A \parallel B$, allora $A \times B = 0$
+    \item Se $A \bot B$, allora $\abs*{A \times B} = AB$
+    \item Proprietà distributiva: $A \times (B + C) = A \times B + A \times C$
+    \item Derivata: $\tfrac{d}{dt}(A \times B) = \tfrac{dA}{dt} \times B + A \tfrac{dB}{dt}$
+\end{itemize}
 
 
 \end{document}
