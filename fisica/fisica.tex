@@ -1717,5 +1717,250 @@ Alcune proprietà del prodotto vettoriale:
     \item Derivata: $\tfrac{d}{dt}(A \times B) = \tfrac{dA}{dt} \times B + A \tfrac{dB}{dt}$
 \end{itemize}
 
+\paragraph{Momento come prodotto vettoriale}
+Il momento di una forza può essere espresso come il prodotto vettoriale tra $\vec{r}$ e $\vec{F}$
+\begin{equation*}
+    \tau \equiv r \times F
+\end{equation*}
+
+\subsection{Corpo rigido soggetto a un momento risultante}
+Si consideri un punto materiale di massa $m$ che si muove lungo una circonferenza di raggio $r$ 
+sotto l’azione di una risultante tangenziale delle forze $\sum \vec{F}_t$ e di una risultante radiale $\sum \vec{F}_r$.
+
+La componente radiale è responsabile dell'accelerazione centripeta e ha momento nullo rispetto al centro della circonferenza, essendo antiparallela. 
+
+La forza tangenziale è responsabile dell'accelerazione tangenziale $\vec{a}_t$, ovvero il cambiamento del modulo della velocità, e in base alla seconda legge
+della dinamica abbiamo che 
+\begin{equation*}
+    \sum \vec{F}_t = ma_t
+\end{equation*}
+Moltiplicando entrambi i termini per il raggio $r$, e tenendo a mente che essendo la forza tangenziale \emph{perpendicolare}, il $\sin$ di $\theta$ è nullo, possiamo scrivere
+\begin{equation*}
+    \sum \tau = \sum F_t r = (ma_t) r
+\end{equation*}
+A questo punto, avendo definito in precedenza $a_t = r\alpha$, possiamo riscrivere la precedente equazione
+\begin{equation*}
+    \sum \tau = (mr\alpha)r = (mr^2)\alpha
+\end{equation*}
+Definiamo ora \textbf{\emph{I}} come la quantità $mr^2$, che chiameremo \textbf{\emph{Momento d'Inerzia}}.
+Questo ci consente di riscrivere nuovamente la precedente equazione
+\begin{equation*}
+    \sum \tau \equiv I\alpha
+\end{equation*}
+Notiamo che questa formula ha la stessa forma della seconda legge di Newton $\sum F = ma $.
+
+Estendiamo lo stesso ragionamento al caso di un \emph{corpo rigido di forma arbitraria}, che ruota intorno ad un asse fisso passante per $O$.
+Il corpo può essere considerato come un insieme di punti materiali di massa $m_i$.
+
+Per ogni elemento, in base alla seconda legge di Newton si ha:
+\begin{equation*}
+    F_i = m_i a_i
+\end{equation*}
+Il momento associato ad ogni forza rispetto all'asse di rotazione è
+\begin{equation*}
+    \tau_i = r_i F_i = r_i m_i a_i 
+\end{equation*} 
+Essendo $a_i = r_i\alpha$, possiamo scrivere 
+\begin{equation*}
+    \tau_i = m_i r_i^2 \alpha
+\end{equation*}
+È importante ricordare che, sebbene ogni punto materiale del corpo rigido abbia una accelerazione ai diversa, \textbf{l’accelerazione 
+angolare} \textbf{$\alpha$} \textbf{è la stessa per tutti i punti}.
+Tenendo presente questo fatto è possibile sommare i momenti agenti su ciascuno dei punti materiali che costituiscono il corpo rigido 
+per ottenere il \textbf{momento risultante} rispetto ad un asse passante per $O$ e \emph{dovuto a tutte le forze esterne agenti sul corpo}:
+\begin{equation*}
+    \sum \tau_{est} = \sum_i \tau_i = \sum_i m_ir_i^2\alpha = \left( \sum_i m_ir_i^2 \right) \alpha = I\alpha
+\end{equation*}
+Otteniamo la formulazione matematica del modello \textbf{corpo rigido soggetto a un momento risultante}, che è l'\emph{analogo rotazionale} del modello 
+\emph{punto materiale soggetto ad una forza risultante}.
+
+\subsection{Calcolo dei momenti di Inerzia}
+Dalla precedente relazione abbiamo definito il \emph{momento di inerzia} con la seguente equazione
+\begin{equation*}
+    I = \sum_i m_ir_i^2
+\end{equation*}
+Immaginando che il corpo sia suddiviso in tanti piccoli elementi di volume, ciascuno di massa $\Delta m_i$ abbiamo
+definizione di momento di Inerzia per un corpo esteso
+\begin{equation*}
+    I = \sum_i r_i^2 \Delta m_i    
+\end{equation*}
+passando al limite per $m_i \to 0$ la somma diventa un integrale esteso a tutto il corpo rigido
+\begin{equation*}
+    I = \lim_{\Delta m_i \to 0} \sum_i r_i^2 \Delta m_i = \int r^2 dm
+\end{equation*}
+
+È di solito più facile calcolare i momenti d’inerzia in termini di elementi di volume piuttosto che in termini delle loro masse.
+Questo si può fare usando la densità $\rho \equiv m/V$. Ricaviamo quindi $dm = \rho dV$
+\begin{equation*}
+    I = \int \rho r^2 dV
+\end{equation*}
+Il momento d'inerzia varia cambiando la posizione dell'asse di rotazione.
+
+\paragraph{Teorema degli assi peralleli} Se il momento d'Inerzia di un corpo calcolato rispetto ad un asse passante per il suo centro di massa è $I_{CM}$, il momento d'Inerzia
+calcolato dispetto ad un qualunque altro asse (parallelo al primo) e distante $D$ rispetto da esso, vale:
+\begin{equation*}
+    I = I_{CM} + MD^2
+\end{equation*}
+
+\subsection{Energia cinetica di rotazione}
+Consideriamo quindi un corpo rigido come un insieme di punti materiali ed assumiamo che esso sia in moto rotatorio attorno ad un asse fisso
+$z$ con una velocità angolare $\omega$.
+Valutiamo un punto materiale posizionato a distanza $r_i$ dall'asse di rotazione. Indicando con $m_i$ la massa del punto materiale e con
+$v_i$ la sua velocità, l'energia cinetica di tale punto materiale è
+\begin{equation*}
+    K_i = \tfrac{1}{2} m_i v_i^2
+\end{equation*}
+Ricordando che ogni punto materiale del corpo ha la stessa velocità angolare $\omega$ e che la velocità dei singoli punti dipende dalla loro distanza $r_i$
+dall'asse di rotazione, l'energia cinetica totale del corpo rigido non è altro che la somma delle energie cinetiche dei singoli
+punti materiali che lo compongono
+\begin{equation*}
+    K_R = \sum_i K_k = \sum_i \tfrac{1}{2} m_i v_i^2 = \tfrac{1}{2} \sum_i m_i r_i^2 \omega^2
+\end{equation*}
+Che possiamo scrivere anche nella forma
+\begin{equation*}
+    K_R = \tfrac{1}{2} \left(\sum_i m_i r_i^2 \right) \omega^2
+\end{equation*}
+Riconosciamo quindi che $\omega^2$ è uguale per tutti i punti e che la quantità dentro le parentesi è il momento di inerzia del corpo:
+\begin{equation*}
+    K_R = \tfrac{1}{2} I \omega^2
+\end{equation*}
+
+\subsection{Considerazioni energetiche nel moto rotatorio}
+Consideriamo il corpo rigido in figura che può ruotare intorno ad un asse passante per $O$ e supponiamo che la sola forza esterna $\vec{F}$ 
+sia applicata nel punto $P$. 
+\begin{figure}[h]
+    \includegraphics[scale=0.4]{lavoro_corpo_rotazione.png}
+    \centering
+\end{figure}
+La forza $\vec{F}$ giace nel piano del foglio. Il lavoro compiuto da $\vec{F}$, quando il suo punto 
+di applicazione ruota intorno all’asse di un tratto infinitesimo, $ds = r d \theta$ è
+\begin{equation*}
+    dW = \vec{F} \cdot d\vec{s} = (F \sin{\phi})r d\theta 
+\end{equation*}
+Poiché il modulo del momento intorno ad $O$ della forza $\vec{F}$ equivale a $rF \sin{\phi}$, possiamo riscrivere il lavoro come
+\begin{equation*}
+    dW = \tau d\theta
+\end{equation*}
+
+Il lavoro compiuto nell’unità di tempo si ottiene dividendo il lavoro della forza $\vec{F}$ applicata al corpo in rotazione 
+per l’intervallo $dt$ in cui la forza ha agito
+\begin{equation*}
+    \frac{dW}{dt} = \tau \frac{d\theta}{dt}
+\end{equation*}
+
+La grandezza $dW/dt$ non è altro che la \textbf{potenza P} sviluppata dalla forza ed essendo $d\theta / dt = \omega$ l'equazione si riduce a
+\begin{equation*}
+    P = \frac{dW}{dt} = \tau \omega
+\end{equation*}
+
+\paragraph{Teorema del lavoro ed energia cinetica}
+Analogamente al teorema lavoro-energia cinetica per il moto traslatorio, questo teorema 
+afferma che il lavoro fatto dalla risultante delle forze esterne su un corpo rigido che ruota intorno ad 
+un asse fisso è uguale alla variazione della energia cinetica di rotazione del corpo.
+\begin{equation*}
+    W = \int_{\omega_i}^{\omega_f} I\omega \; d\omega = \tfrac{1}{2} I\omega_f^2 - \tfrac{1}{2}I\omega_i^2
+\end{equation*}
+
+Se un corpo in rotazione è isolato e tutte le forze interne sono conservative, si può applicare il modello sistema isolato
+e quindi il principio di conservazione dell’energia meccanica.
+
+\section{Momento angolare}
+Si consideri un punto materiale di massa $m$, a cui è associata la quantità di moto $\vec{p}$ e la cui posizione sia individuata dal vettore $\vec{r}$.
+Nel descrivere il moto di traslazione di un punto materiale, abbiamo trovato che $\sum \vec{F} = \vec{p}/dt$.
+Moltiplichiamo vettorialmente $r$ da entrambe le parti
+\begin{equation*}
+    \vec{r} \times \sum \vec{F} = \sum \vec{\tau} = \vec{r} \times \frac{d\vec{p}}{dt}
+\end{equation*}
+Aggiungiamo ora al termine di destra la quantità $\tfrac{d\vec{r}}{dt}\times \vec{p}$ che è uguale a zero in quanto $\tfrac{d\vec{r}}{dt} = \vec{v}$,
+e i vettori $\vec{v}$ e $\vec{p}$ sono paralleli. Otteniamo quindi
+\begin{equation*}
+    \sum \vec{\tau} = \vec{r} \times \frac{d\vec{p}}{dt} + \frac{d\vec{r}}{dt}\times \vec{p}
+\end{equation*}
+che possiamo riscrivere come
+\begin{equation*}
+    \sum \vec{\tau} = \frac{d(\vec{r} \times \vec{p})}{dt}
+\end{equation*}
+
+\paragraph{Definizione}
+Il \textbf{momento angolare} $\vec{L}$ di un punto materiale rispetto ad un asse passante per l’origine $O$ è, ad un certo istante, il prodotto vettoriale 
+tra il vettore posizione $\vec{r}$ del punto materiale e la sua quantità di moto $\vec{p}$:
+\begin{equation*}
+    \vec{L} \equiv \vec{r} \times \vec{p}
+\end{equation*}
+Possiamo quindi riscrivere la precedente equazione come
+\begin{equation*}
+    \sum \vec{\tau} = \frac{d(\vec{r} \times \vec{p})}{dt} = \frac{d\vec{L}}{dt}
+\end{equation*}
+
+\subsection{Momento angolare di un corpo rigido in rotazione}
+Restringiamo ora l’analisi su un corpo rigido in rotazione attorno ad un asse fisso coincidente con l’asse $z$ del sistema
+di coordinate del quale vogliamo determinare il momento angolare. Tutti i punti materiali che costituiscono il corpo rigido 
+ruotano nel piano $xy$, attorno all’asse $z$, con la stessa velocità angolare $\omega$. 
+
+Il modulo del momento angolare intorno all’asse $z$ dell’i-esimo punto materiale di massa $m_i$ è $m_iv_ir_i$ e, poiché $v_i = r_i\omega$ si ha
+\begin{equation*}
+    L_i = m_ir_i^2 \omega
+\end{equation*}
+
+Siamo ora in grado di trovare il momento angolare totale del corpo (che, in questo caso ha solo componente nell'asse $z$)
+effettuando la somma degli $L_i$ su tutti i punti materiali:
+\begin{equation*}
+    L_z = \sum_i L_i = \sum_i m_ir_i^2 \omega = \left(\sum_i m_ir_i^2 \right) \omega
+\end{equation*}
+da cui possiamo finalmente trovare che
+\begin{equation*}
+    L_z = I\omega
+\end{equation*}
+tale equazione è matematicamente simile all'equazione per la quantità di moto.
+
+\subsection{Conservazione del momento angolare}
+\paragraph{Definizione} 
+Il \textbf{momento angolare totale} di un sistema \textbf{rimane costante} (in modulo, direzione e verso) se è \textbf{nullo} il \textbf{momento} 
+\textbf{risultante} delle \textbf{forze esterne}, cioè se il \textbf{sistema} è \textbf{isolato}.
+
+~\newline
+Questo principio è alla base del modello sistema isolato basato sul momento angolare. Vediamo infatti che se risulta
+\begin{equation*}
+    \sum \vec{\tau}_{est} = \frac{d\vec{L}_{tot}}{dt} = 0
+\end{equation*}
+allora si ha
+\begin{equation*}
+    \Delta \vec{L}_{tot} = 0
+\end{equation*}
+
+Nel caso in cui durante il moto rotatorio la distribuzione delle masse di un corpo materiale si modifichi, il suo momento 
+di inerzia cambia nel tempo; necessariamente, poiché il modulo del momento angolare del sistema è $L = I\omega$, la conservazione
+del momento angolare implica che il prodotto di $I$ per $\omega$ rimanga costante. Pertanto, se il sistema è isolato, ad una variazione di
+$I$ deve corrispondere una variazione di $\omega$. In questo caso, scriveremo il principio di conservazione del momento angolare come
+\begin{equation*}
+    I_i\omega_i = I_f\omega_f = \text{costante}
+\end{equation*}
+
+\subsection{Moto di giroscopi e trottole}
+Nel moto di rotazione della trottola abbiamo due diverse rotazioni: la rotazione della trottola intorno al suo asse e la rotazione dell'asse della trottola
+intorno ad un asse verticale, ovvero l'asse $z$.
+
+La trottola è soggetta alla forza peso applicata al suo centro di massa e dovrebbe cadere se non fosse in rotazione, ovvero se non possedesse momento angolare.
+
+Il moto dell’asse di simmetria attorno alla verticale è detto \textbf{moto di precessione} ed è generalmente più lento rispetto al moto di rotazione della trottola intorno al proprio asse.
+
+Ll centro di massa della trottola non si trova sulla verticale del punto di appoggio $O$ e, quindi, rispetto a questo punto, la forza peso $M\vec{g}$ della 
+trottola ha un momento, che farebbe certamente cadere la trottola se questa non fosse in rotazione. A causa del moto di rotazione, la trottola possiede un momento angolare $\vec{L}$ diretto lungo il suo asse di simmetria.
+
+Le caratteristiche fondamentali del moto di precessione possono essere illustrate considerando il semplice \textbf{giroscopio} mostrato in figura.
+Mentre la reazione vincolare ha momento nullo, la forza peso $M\vec{g}$ rivolta verso il basso ha un momento dato da $\vec{\tau} = \vec{r} \times M \vec{g}$.
+Sappiamo già che il momento della forza applicata produce un cambiamento del momento angolare, ovvero $\tau = \tfrac{d\vec{L}}{dt}$.
+\begin{figure}[h]
+    \includegraphics[scale=0.6]{giroscopio_momento.png}
+    \centering
+\end{figure}
+
+Si osserva che il momento $\vec{\tau}$ produce nell’intervallo di tempo $dt$ una variazione di momento angolare $d\vec{L}$ che ha la stessa direzione e 
+verso di $\vec{\tau}$ , ed è quindi perpendicolare a $\vec{L}$. In un intervallo di tempo, la variazione del momento angolare è $d\vec{L} = \vec{L}_f - \vec{L}_i = \vec{\tau}dt$.
+Poiché $d\vec{L}$ è perpendicolare a $\vec{L}$, il modulo di $\vec{L}$ non cambia, ma cambia la sua direzione: ha la stessa direzione e verso di $\vec{\tau}$.
+
+
+
+
 
 \end{document}
