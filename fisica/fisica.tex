@@ -1959,8 +1959,162 @@ Si osserva che il momento $\vec{\tau}$ produce nell’intervallo di tempo $dt$ u
 verso di $\vec{\tau}$ , ed è quindi perpendicolare a $\vec{L}$. In un intervallo di tempo, la variazione del momento angolare è $d\vec{L} = \vec{L}_f - \vec{L}_i = \vec{\tau}dt$.
 Poiché $d\vec{L}$ è perpendicolare a $\vec{L}$, il modulo di $\vec{L}$ non cambia, ma cambia la sua direzione: ha la stessa direzione e verso di $\vec{\tau}$.
 
+\chapter{Equilibrio del corpo rigido}
+Quando abbiamo studiato il modello \emph{punto materiale}, abbiamo stabilito la sua condizione di equilibrio, che
+si presenta quando il moto, compiuto con velocità costante, di un punto materiale soggetto a forze di risultante nulla:
+\begin{equation*}
+    \sum \vec{F} = 0
+\end{equation*}
+
+Nel caso reale di un corpo esteso, \emph{la situazione è più complessa} perché il corpo non può spesso essere trattato come un punto materiale. 
+Infatti, perché un corpo esteso sia in equilibrio, deve essere soddisfatta anche una seconda condizione che tenga conto anche dei 
+\textbf{possibili moti rotazionali del corpo}.
+
+La condizione necessaria affinché un corpo rigido sia in \emph{equilibrio rotazionale} è che il momento risultante delle forze rispetto ad un qualsiasi asse sia nullo. 
+Dobbiamo dunque soddisfare due condizioni affinché un corpo rigido sia in equilibrio:
+\begin{itemize}
+    \item La risultante delle forze esterne deve essere nulla:
+    \begin{equation*}
+        \sum \vec{F}_{est} = 0    
+    \end{equation*}
+    \item La risultante dei momenti esterni calcolati \emph{rispetto a qualsiasi asse} deve essere nulla
+    \begin{equation*}
+        \sum \vec{\tau}_{est} = 0
+    \end{equation*}
+\end{itemize}
+Queste condizioni descrivono il modello di analisi \textbf{corpo rigido in equilibrio}. 
+La prima condizione garantisce l’equilibrio traslatorio: l’\emph{accelerazione del centro di massa} del corpo, osservato da un riferimento inerziale, 
+deve essere nulla. La seconda condizione garantisce l’equilibrio rotatorio: l’\emph{accelerazione angolare del corpo}, rispetto ad un \emph{qualsiasi asse}, 
+deve essere nulla.
+
+Semplifichiamo il caso di studio a casi in cui le forze sono contenute sullo stesso piano $xy$. Questo riduce il sistema a solamente tre equazioni scalari:
+\begin{align*}
+    \sum F_x &= 0 & \sum F_y &= 0 & \sum \tau_z &= 0
+\end{align*}
+essendo infatti le forze orientate solamente sugli assi $x$ e $y$, queste producono solamente momenti lungo l'asse $z$.
+
+Se un corpo è in \emph{equilibrio traslazionale} e se il momento risultante è nullo rispetto ad un asse, allora è nullo rispetto a qualunque altro asse, 
+indipendentemente dal numero di forze applicate.
+
+\section{Baricentro}
+Nell’analizzare il moto di corpi rigidi, una delle forze da considerare è la forza di attrazione gravitazionale e, quindi, è necessario conoscere il suo 
+punto di applicazione, ovvero il \textbf{baricentro}. 
+L’insieme delle forze gravitazionali agenti sulle masse che compongono l’oggetto è equivalente ad una \emph{singola forza gravitazionale} che agisce in questo
+punto. Quindi, per calcolare il momento della forza peso $M\vec{g}$, tutto il peso del corpo può essere considerato applicato nel baricentro.
+
+Nel caso che l’accelerazione $\vec{g}$ sia uniforme su tutto l’oggetto, allora il centro di gravità coincide con il centro di massa. Supponiamo di dividere un corpo
+in tanti piccoli elementi di massa $m_i$. Su ogni massa agisce la forza peso $m_ig_i$. Su ogni elemento di massa agisce anche un \emph{momento} $m_ig_ix_i$.
+
+Vogliamo definire un punto (centro di gravità o baricentro) tale che la forza peso totale abbia lo stesso effetto di rotazione delle forze peso applicate alle singole $m_i$
 
 
+\chapter{Gravitazione}
+\section{Legge di gravitazione universale di Newton}
+Nel 1687 \textbf{Newton} pubblicò il suo lavoro sulla legge della forza di gravità nei suoi \emph{“Mathematical Principles of Natural Philosophy”}. 
+La \textbf{legge di gravitazione universale} di Newton stabilisce che \emph{ogni punto materiale} nell’Universo attrae ogni altro punto materiale con una forza che è 
+\emph{direttamente proporzionale al prodotto delle loro masse} ed \emph{inversamente proporzionale al quadrato della loro distanza} reciproca.
+\begin{equation*}
+    F_g = G \frac{m_1m_2}{r^2}
+\end{equation*}
+dove G è una costante universale chiamata \textbf{costante di gravitazionale universale}, il cui valore in unità SI è
+\begin{equation*}
+    G = 6.674 \times 10^{-11} \;\; N\cdot m^2/kg^2
+\end{equation*}
+
+Possiamo esprimere questa forza in forma vettoriale definendo un versore unitario $\hat{r}_{12}$. Poiché questo versore unitario è diretto dal punto materiale 1 al punto materiale 2, 
+la forza esercitata dal punto materiale 1 sul punto materiale 2 è
+\begin{equation*}
+    \vec{F}_{12} = -G\frac{m_1m_2}{r^2}\hat{r}_{12}
+\end{equation*}
+Per la terza legge di Newton, la forza $\vec{F}_{21}$ esercitata dal punto materiale $2$ sul punto materiale $1$ ha lo stesso modulo di $\vec{F}_{12}$
+e verso opposto, cioè queste due forze formano una coppia di forze di azione e reazione e quindi risulta $\vec{F}_{21} = -\vec{F}_{12}$ .
+
+\subsection{Accelerazione di caduta libera e forza gravitazionale}
+Abbiamo chiamato il modulo della forza gravitazionale agente su di un corpo posto in prossimità della superficie terrestre, il peso del corpo.
+\begin{equation*}
+    mg = G\frac{M_T m}{R_T^2}
+\end{equation*}
+\begin{equation*}
+    g = G\frac{M_T}{R_T^2}
+\end{equation*}
+La seconda equazione lega l’accelerazione di caduta libera $g$ ad alcuni parametri fisici che caratterizzano la Terra, come la massa e il suo raggio,
+e spiega l’origine del valore $9.80\;\;m/s2$ usato in precedenza.
+Consideriamo ora un corpo di massa $m$ ad una distanza $h$ al di sopra della superficie terrestre, corrispondente ad una distanza $r=R_T+h$ dal centro 
+della Terra. Il valore della forza gravitazionale che agisce su questa massa è
+\begin{equation*}
+    F_g = G\frac{M_T m}{r^2} = G\frac{M_T m}{(R_T + h)^2}
+\end{equation*}
+
+l modulo della forza gravitazionale che agisce sul corpo in questa posizione può anche essere scritto come $F_g = mg$, dove $g$ è il valore 
+dell’accelerazione di gravità alla quota $h$, quindi sostituendo questa espressione per $F_g$ nell’ultima equazione otteniamo per $g$ il valore
+\begin{equation*}
+    g = \frac{GM_T}{r^2} = \frac{GM_T}{(R_T + h)^2}
+\end{equation*}
+Ne consegue che \textbf{g decresce al crescere della quota}.  Poiché il peso di un corpo è $mg$, vediamo che, per $r \to \infty$, il peso tende a zero.
+
+\subsection{Campo gravitazionale}
+Oggi si può guardare all’interazione gravitazionale da un punto di vista diverso, utilizzando il concetto di \textbf{campo gravitazionale} esistente in ogni punto dello spazio.
+Quando un punto materiale viene posto in un punto dello spazio in cui è presente un campo gravitazionale, il punto materiale risente di una forza gravitazionale. In altre parole, 
+si immagina che sia il campo ad esercitare una forza su di una particella piuttosto che pensare alla forza come diretta interazione reciproca.
+Il campo gravitazionale $\vec{g}$ è quindi definito da
+\begin{equation*}
+    \vec{g} \equiv \frac{\vec{F}_g}{m_0}
+\end{equation*}
+Il campo gravitazionale, cioè, è eguale in ogni punto alla forza gravitazionale $\vec{F}_g$ che un punto materiale di prova subisce divisa per la massa stessa, e 
+chiameremo il corpo responsabile dell’instaurarsi del campo \emph{sorgente}.
+
+\section{Le leggi di Keplero}
+L’astronomo tedesco Giovanni Keplero custodì i dati astronomici del maestro Brahe e passò circa 16 anni cercando di dedurre un modello matematico per 
+il moto dei pianeti. L’interpretazione di questi dati risultò assai complessa in quanto i pianeti erano osservati da un sistema – la Terra – anch’esso in moto.
+L’analisi di Keplero del moto planetario può essere riassunta in \emph{tre affermazioni}, oggi universalmente note come \textbf{leggi di Keplero}.
+\subsection{Prima legge di Keplero}
+
+\paragraph{Enunciato} Tutti i pianeti percorrono orbite ellittiche con il Sole in uno dei fuochi.
+
+~\newline
+Per definire matematicamente un’ellisse è necessario scegliere due punti F1 ed F2, chiamati \textbf{fuochi}.
+La distanza maggiore tra due punti dell’ellisse è chiamata \textbf{asse maggiore}, passa per il centro dell’ellisse stessa ed ha lunghezza $2a$, 
+\begin{wrapfigure}{r}{0.23\textwidth}
+    \centering
+    \includegraphics[width=0.23\textwidth]{ellisse_keplero.png}
+\end{wrapfigure}
+dove $a$ è detto \textbf{semiasse maggiore}. Analogamente, la distanza minore tra due 
+punti dell’ellisse contenente il centro è chiamata \textbf{asse minore}, ed ha lunghezza $2b$, dove $b$ è detto \textbf{semiasse minore}.
+Ciascun fuoco dell’ellisse si trova ad una distanza c dal centro della stessa tale che 
+\begin{equation*}
+    a^2 = b^2 + c^2
+\end{equation*}
+Nel moto dei pianeti del sistema solare, \textbf{il Sole si trova in uno dei due fuochi}, e non vi è niente nell’altro.
+
+L’\textbf{eccentricità} di un’ellisse è definita dalla relazione $e = c/ a$ ed è il parametro che dà un’idea immediata della forma dell’ellisse. 
+
+\subsection{Seconda legge di Keplero}
+\paragraph{Enunciato} Il raggio vettore che unisce il Sole ad un qualsiasi pianeta spazza aree eguali in intervalli di tempo eguali.
+
+~\newline
+\begin{figure}[h]
+    \includegraphics[scale=0.5]{seconda_legge_keplero.png}
+    \centering
+\end{figure}
+
+\subsection{Terza legge di Keplero}
+\paragraph{Enunciato} Il quadrato del periodo orbitale di ogni pianeta è proporzionale al cubo del semiasse maggiore della sua orbita ellittica.
+
+~\newline
+\begin{equation*}
+    T^2 = K_s r^3
+\end{equation*}
+dove $K_s$ è una costante data da 
+\begin{equation*}
+    K_s = \frac{4\pi^2}{GM_s} = 2.97 \times 10^{-19} \;\; s^2/m^3
+\end{equation*}
+ed è uguale per tutti i pianeti.
+
+\section{Energia potenziale gravitazionale}
+Quando abbiamo introdotto l'energia potenziale gravitazionale abbiamo messo in rilievo il fatto che l’espressione dell’energia potenziale gravitazionale 
+$U = mgy$ è valida solo quando la particella $m$ è prossima alla superficie della Terra, cioè dove la forza gravitazionale è indipendente da $y$.
+Tale espressione inoltre vale nel caso in cui si abbia a che fare con un corpo molto massivo (come la \emph{Terra}) che crea un campo gravitazione $g$ nel quale un 
+punto materiale di massa £ molto più piccola si trova immerso.
 
 
 \end{document}

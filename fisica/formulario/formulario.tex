@@ -86,7 +86,7 @@
               $\mu_s$ : coefficiente di attrito statico \newline
               $n$ : reazione vincolare
         \item Attrito dinamico: $f_k = \mu_k n$ \newline
-              $\mu_s$ : coefficiente di attrito dinamico
+              $\mu_k$ : coefficiente di attrito dinamico
     \end{itemize}
 
     \section*{Lavoro}
@@ -188,6 +188,99 @@
         \item $\vec{r}_{CM} = x_{CM}\hat{i} + y_{CM}\hat{j} + z_{CM}\hat{k} = \tfrac{1}{M} \sum_i m_i \vec{r}_i$
         \item Corpo esteso: $x_{CM} = \tfrac{1}{M} \int x \; dm$ (analogo per y e z)
         \item Corpo esteso: $\vec{r}_{CM} = \frac{1}{M} \int \vec{r} \; dm$
+    \end{itemize}
+
+    \section*{Rotazione Corpo Rigido}
+    \begin{itemize}
+
+        \begin{multicols*}{2}
+            \item Posizione (angolare): $\theta$
+            \item $\omega_{media} = \tfrac{\Delta \theta}{\Delta t}$
+            \item $\omega_{ist} = \tfrac{d \theta}{d t}$
+            \item Spost: $\Delta \theta = \theta_f - \theta_i$
+            \item $\alpha_{media} = \tfrac{\Delta \omega}{\Delta t}$
+            \item $\alpha_{ist} = \tfrac{d \omega}{d t}$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Corpo rigido con acc. ang. costante}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $\omega_f = \omega_i + \alpha t$
+            \item $\theta_f = \theta_i + \omega_i t + \tfrac{1}{2} \alpha t^2$ 
+            \item $\omega_f^2 = \omega_i^2 + 2\alpha (\theta_f - \theta_i)$
+            \item $\theta_f = \theta_i + \tfrac{1}{2}(\omega_i + \omega_f)t$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Variabili angolari e lineari}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $v_t = r\omega$
+            \item $a_t = r\alpha$
+            \item $a_c = \tfrac{v^2}{r} = r\omega^2$
+            \item $a = r\sqrt{\alpha^2 + \omega^4}$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Momento}
+    \begin{itemize}
+        \item $\tau = rF\sin{\phi} = Fd = r \times F$
+        \item $d = r\sin{\phi}$
+    \end{itemize}
+
+    \section*{Prodotto vettoriale}
+    \begin{itemize}
+        \begin{multicols}{2}
+        \item $C = A \times B \equiv AB\sin{\theta}$
+        \end{multicols}
+    \end{itemize}
+
+    \section*{Momento risultante}
+    \begin{itemize}
+        \item $\sum \tau = (ma_t)r = (mr^2)\alpha = I\alpha$
+    \end{itemize}
+
+    \section*{Momento d'Inerzia}
+    \begin{itemize}
+        \item $I = \sum_i m_ir_i^2 = \int \rho r^2 dV$
+        \item Teorema Assi Paralleli: $I = I_{CM} + MD^2$
+    \end{itemize}
+
+    \section*{Energie di rotazione}
+    \begin{itemize}
+        \item Cinetica: $K_R = \tfrac{1}{2} I\omega^2$
+        \item Lavoro: $dW = (F\sin{\phi})rd\theta = \tau d\theta = \tfrac{1}{2} I\omega_f^2 - \tfrac{1}{2}I\omega_i^2$
+        \item Potenza: $\tfrac{dW}{dt} = \tau\omega$
+    \end{itemize}
+
+    \section*{Momento angolare}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item $\vec{L} = \vec{r} \times \vec{p}$
+            \item $L_z = I\omega$         
+        \end{multicols}
+        \item $I_i\omega_i = I_f\omega_f = \text{costante}$   
+    \end{itemize}
+
+    \section*{Equilibrio corpo rigido}
+    \begin{itemize}
+        \item $\sum F_x = \sum F_y = \sum \tau_z = 0$
+    \end{itemize}
+
+    \section*{Gravitazione}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $F_g = G \frac{m_1m_2}{r^2}$
+            \item $G = 6.674 \times 10^{-11}$
+            \item $g = \frac{GM_T}{r^2} = \frac{GM_T}{(R_T + h)^2}$
+            \item Campo grav.: $\vec{g} \equiv \frac{\vec{F}_g}{m_0}$
+            \item Raggio orbita: $r = \sqrt[3]{\frac{T^2\cdot G \cdot M}{4 \pi^2}}$
+            \item Vel. fuga: $v = \sqrt{\tfrac{2GM_{T}}{R_{T}}}$
+            \item $K = \tfrac{GMm}{2r}$
+            \item $U = -\tfrac{GMm}{r}$
+        \end{multicols*}
+        \item Velocità orbitale: $\sqrt{\tfrac{GM}{r}} = \sqrt{\tfrac{GM}{R+h}}$
     \end{itemize}
 
 \end{multicols*}
