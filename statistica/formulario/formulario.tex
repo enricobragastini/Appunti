@@ -1,0 +1,100 @@
+\documentclass[a4paper,14pt,landscape]{extarticle}
+\usepackage[
+    margin=0.5cm
+]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{titlesec}
+
+\title{}
+\author{}
+\date{}
+
+\pagestyle{empty}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+\begin{center}
+    \vspace{1cm}
+    \textbf{\Large Formulario pressapochistico di Statistica}
+    \vspace{1cm}
+\end{center}
+
+\begin{multicols*}{2}
+    \section*{Statistica descrittiva}
+    \begin{itemize}
+        \item Varianza: $\sum_{i=1}^n \frac{(x_i - \bar{x})^2}{n-1}$
+        \item Deviazione: $S = \sqrt{Var}$
+        \item Interquantile Range: $IRQ = Q_3 - Q_1$
+        \item Lower-Outlier: $< Q_1 - 1,5\cdot(IRQ)$
+        \item Upper-Outlier: $> Q_3 + 1,5\cdot(IRQ)$
+        \item Skewness campionario: $S_0 = \frac{\sqrt{n(n-1)}}{n-2}S_1$
+        \item Coeff. di correlazione: $r = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i - \bar{y})}{(n-1)S_x S_y}$ $[-1 \le r \le 1]$
+    \end{itemize}
+
+    \section*{Permutazioni / Combinazioni}
+    \begin{itemize}
+        \item Permutazioni (ordine): $P(n,r) = \frac{n!}{(n-r)!}$
+        \item Combinazioni (no ordine): $C(n,r) = \binom{n}{r} = \frac{n!}{(n-r)! r!}$
+    \end{itemize}
+
+    \section*{Probabilità condizionata}
+    \begin{itemize}
+        \item $P(E|F) = \frac{P(EF)}{P(F)}$
+        \item $P(E) = P(E|F)P(F) + P(E|F^c)P(F^c)$
+        \item Bayes: $P(F|E) = \frac{P(E|F)P(F)}{P(E)}$
+        \item Eventi indipendenti: $P(EF) = P(E)P(F)$
+    \end{itemize}
+
+    \section*{Variabili aleatorie}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item CDF: $P\{X \le x\}$ 
+            \item PMF: $P\{X=x\}$
+        \end{multicols*}
+        \item $E[X] = \sum_i (x_i \cdot P\{X = x_i\}$)
+        \item $Var(X) = E[X^2]-(E[X])^2$
+        \item $Cov(X,Y) = E[XY]-E[X]\cdot E[Y]$
+        \item $Corr(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}$
+    \end{itemize}
+
+    \section*{Variabile Aleatoria Binomiale}
+    \begin{itemize}
+        \item PMF: $P\{X = i\} = \binom{n}{i} p^i (1-p)^{n-i}$
+        \item CDF: $P\{X \le i\} = \sum_{k=0}^i \binom{n}{k} p^k (1-p)^{n-k}$
+        \begin{multicols*}{2}
+            \item $E[X] = n \cdot p$
+            \item $Var(X) = n \cdot p (1-p)$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Variabile Aleatoria di Poisson}
+    \begin{itemize}
+        \item PMF: $P\{X = i\} = \frac{e^{-\lambda} \cdot \lambda ^i}{i!}$
+        \begin{multicols*}{2}
+            \item $E[X] = \lambda $
+            \item $Var(X) = \lambda $
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Distribuzione Chi-Square}
+    \begin{itemize}
+        \item $X = Z_1^2 + Z_2^2 + \cdots + Z_n^2$
+    \end{itemize}
+
+    \section*{Hypothesis Testing}
+    \begin{itemize}
+        \item $\alpha = \text{errore tipo 1} = \text{rifiuto ma è corretta}$
+        \item $\beta = \text{errore tipo 2} = \text{accetto ma non è corretta}$
+    \end{itemize}
+
+
+\end{multicols*}
+
+
+
+\end{document}

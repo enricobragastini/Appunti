@@ -1,0 +1,183 @@
+\documentclass[a4paper,14pt,landscape]{extarticle}
+\usepackage[
+    margin=1cm
+]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{titlesec}
+
+\title{}
+\author{}
+\date{}
+
+\pagestyle{empty}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\begin{document}
+\begin{center}
+    \vspace{1cm}
+    \textbf{\Large Formulario Fisica 1}
+    \vspace{1cm}
+\end{center}
+
+\begin{multicols*}{2}
+    \section*{Moto Rettilineo Uniforme}
+    \begin{itemize}
+        \item $v_x = v_m = \text{costante}$
+        \item $v_x = \frac{\Delta x}{\Delta t}$
+        \item $x_f = x_i + v_x t$
+    \end{itemize}
+
+    \section*{Accelerazione media e istantanea}
+    \begin{itemize}
+        \item $a_m = \frac{\Delta v_x}{\Delta t} = \frac{v_{xf} - v_{xi}}{t_{f} - f_{i}}$
+        \item $a_x = \displaystyle\lim_{\Delta t \to 0} \frac{\Delta v_x}{\Delta t} = \frac{dv_x}{dt} = \frac{d^2 x}{dt^2}$
+    \end{itemize}
+
+    \section*{Moto Rettilineo Uniformemente Accelerato}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $a_m = a_x = \text{costanti}$
+            \item $v_{xf} = v_{xi} + a_x t$
+            \item $v_m = \tfrac{1}{2} (v_{xi} + v_{xf})$
+            \item $x_f = x_i + v_{xi}t + \tfrac{1}{2} a_x t^2$
+            \item $v^2_{xf} = v^2_{xi} + 2a_x(x_f - x_i)$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Corpi in caduta libera}
+    \begin{itemize}
+        \item $a_y = g = \text{costante}$
+        \item $g = 9.81 m/s^2$
+    \end{itemize}
+
+    \section*{Moto dei Proiettili}
+    \begin{itemize}
+        \item $h_{max} = \frac{v_i^2 \sin^2 \theta_i}{2g}$
+        \item $R \text{(gittata)} = \frac{v_i^2 \sin 2\theta_i}{g}$
+    \end{itemize}
+
+    \section*{Moto Circolare Uniforme}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $a_c = \frac{v^2}{r}$
+            \item $T = \frac{2 \pi r}{v}$
+            \item $\omega = \frac{2\pi}{T}$
+            \item $\omega = \frac{v}{r}$
+            \item $v = r\omega$
+            \item $a_c = r\omega^2$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Seconda legge di Newton}
+    \begin{itemize}
+        \item $\vec{a} \propto \frac{\sum \vec{F}}{m}$
+        \item $\sum \vec{F} = m\vec{a}$
+        \item $F_g (\text{forza peso}) = mg$
+    \end{itemize}
+
+    \section*{Attrito}
+    \begin{itemize}
+        \item Attrito statico: $f_s \leq \mu_s n$ \newline
+              $\mu_s$ : coefficiente di attrito statico \newline
+              $n$ : reazione vincolare
+        \item Attrito dinamico: $f_k = \mu_k n$ \newline
+              $\mu_s$ : coefficiente di attrito dinamico
+    \end{itemize}
+
+    \newpage
+
+    \section*{Lavoro}
+    \begin{itemize}
+        \item Lavoro: $W \equiv F \Delta r \cos{\theta}$
+        \item Lavoro forza variabile: $W= \int_{x_i}^{x_f} F_x \; dx$
+    \end{itemize}
+
+    \section*{Prodotto scalare}
+    \begin{itemize}
+        \item $\vec{A} \cdot \vec{B} = AB\cos{\theta}$
+        \item $W = F \Delta r \cos{\theta} = \vec{F} \cdot \Delta \vec{r}$
+    \end{itemize}
+
+    \section*{Lavoro di una molla}
+    \begin{itemize}
+        \item Legge di Hooke: $F_s = -kx$
+        \item $W_s = \int_{x_i}^{x_f} F_s \; dx = \tfrac{1}{2}kx_i^2 + \tfrac{1}{2}kx_f^2$
+    \end{itemize}
+
+    \section*{Energia cinetica}
+    \begin{itemize}
+        \begin{multicols*}{3}
+            \item $K \equiv \tfrac{1}{2} mv^2$
+            \item $W = \Delta K$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Energia potenziale}
+    \begin{itemize}
+        \item Gravitazionale: $U_g \equiv mgy$
+        \item $W_{est} = \Delta U_g = mgy_f - mgy_i$
+        \item Elastica: $U_s \equiv \tfrac{1}{2} kx^2$
+        \item $W_{F_{app}} = \Delta U_s = \tfrac{1}{2}kx_f^2 - \tfrac{1}{2}kx_i^2$
+    \end{itemize}
+
+    \section*{Conservazione dell'energia}
+    \begin{itemize}
+        \item $\Delta E_{sistema} = \sum T$
+        \item $\Delta K + \Delta U + \Delta E_{int} = W + Q + T_{OM} + T_{M} + T_{E}+ T_{EM}$
+    \end{itemize}
+
+    \section*{Energia meccanica}
+    \begin{itemize}
+        \item $E_{mecc} = K + U$
+        \item Si conserva: $E_{mecc_f} = E_{mecc_i}$
+    \end{itemize}
+
+    \section*{Potenza}
+    \begin{itemize}
+        \begin{multicols*}{3}
+            \item $P \equiv \tfrac{dE}{dt}$
+            \item $P_{media} \equiv \tfrac{W}{\Delta t}$
+            \item $P_{ist} = \tfrac{dW}{dt}$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Quantità di moto}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $p \equiv m\vec{v}$
+            \item $\sum \vec{F} = \tfrac{d\vec{p}}{dt}$
+            \item $\Delta \vec{p} = \int_{t_i}^{t_f} \sum\vec{F} \; dt$
+            \item Impulso: $\Delta \vec{p} = \vec{I}$            
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Urti anelastici}
+    \begin{itemize}
+        \begin{multicols*}{2}
+            \item $\Delta \vec{p} = 0$
+            \item $\vec{v}_f = \tfrac{m_1\vec{v}_{1i} + m_2\vec{v}_{2i}}{m_1 + m_2}$
+        \end{multicols*}
+    \end{itemize}
+
+    \section*{Urti elastici}
+    \begin{itemize}
+        \item $\vec{p}_i = \vec{p}_f \;\; \text{e} \;\; K_i = K_f$
+        \item $v_{1f} = \left( \tfrac{m_1 - m_2}{m_1 + m_2} \right) v_{1i} + \left( \tfrac{2m_2}{m_1 + m_2} \right) v_{2i}$
+        \item $v_{2f} = \left( \tfrac{2m_1}{m_1 + m_2} \right) v_{1i} + \left( \tfrac{m_2 - m_1}{m_1 + m_2} \right) v_{2i}$
+    \end{itemize}
+
+    \section*{Centro di massa}
+    \begin{itemize}
+        \item $x_{CM} \equiv \frac{m_1x_1 + m_2x_2}{m_1 + m_2}$
+        \item $x_{CM} = \frac{1}{M}\sum_i m_ix_i$ (uguale per y e z)
+        \item $\vec{r}_{CM} = x_{CM}\hat{i} + y_{CM}\hat{j} + z_{CM}\hat{k} = \frac{1}{M} \sum_i m_i \vec{r}_i$
+    \end{itemize}
+
+\end{multicols*}
+
+\end{document}

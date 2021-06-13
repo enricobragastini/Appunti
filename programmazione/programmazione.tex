@@ -449,6 +449,77 @@ L'argomento della funzione \emph{free()} è un puntatore all'inizio della memori
 \end{lstlisting}
 La funzione \emph{free()} non restituisce alcun risultato.
 
+\section{Matrice dinamica}
+Per generare una matrice dinamicamente di dimensioni stabilite durante l'esecuzione del programma è necessario avere la seguente struttura:
+\begin{itemize}
+    \item Puntatore a una lista
+    \item Lista di puntatori
+    \item Una serie di array-righe raggiungibile dalla precedente lista di puntatori
+\end{itemize}
+
+~\newline
+Esempio:
+\begin{lstlisting}[language=C]
+    #include <stdio.h>
+    #include <stdlib.h>
+    int main(){
+        int i,j;
+        int **p;
+        int r, c;
+
+        printf("Quante righe e quante colonne?\n");
+        scanf("%d %d", &r, &c);
+
+        // array dinamico di puntatori
+        p = (int **) malloc(r * sizeof(int *)); 
+
+        // allocazione delle righe
+        for(i=0; i<r; i++)
+            p[i] = malloc(c * sizeof(int));
+        
+        ... 
+        ... 
+        free(p);
+        ... 
+
+        return 0;
+    }
+\end{lstlisting}
+
+\chapter{Liste}
+Le liste sono delle strutture dati dinamiche che permettono di gestire problemi in cui non si è in grado di prevedere la quantità
+di dati da salvare in memoria.
+
+Una lista è una struttura dati lineare, in cui gli elementi non sono memorizzati in locazioni di memoria contigue. 
+Gli elementi di una lista sono collegati utilizzando i puntatori come mostrato nell'immagine seguente:
+
+\begin{figure}[h]
+    \includegraphics[scale=0.5]{linkedlist.png}
+    \centering
+\end{figure}
+Nello \emph{stack} verrà mantenuto un puntatore che punta alla \textbf{testa} della \textbf{lista dinamica}.
+Ogni nodo della lista avrà poi il puntatore all'elemento successivo.
+
+~\newline
+Esempio:
+\begin{lstlisting}[language=C]
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    struct elem_{
+        int num;
+        struct elem_ *next;
+    };
+    typedef struct elem_ elem;  // rinomino il tipo
+
+    elem * inserisciInCoda(elem *, int);
+    void visualizza(elem *);
+
+    int main(){
+
+        return 0;
+    }
+\end{lstlisting}
 
 
 
